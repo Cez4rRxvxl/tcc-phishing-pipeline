@@ -1,0 +1,107 @@
+{
+  "repositorio": "https://github.com/fcdalgic/GramBeddings",
+  "commit": "a47f863",
+  "commit_completo": "a47f86363590ae3587a4a1b5af20198d00e63c89",
+  "data_do_commit": "2022-11-26T17:17:27Z",
+  "nota": "A chave de cada arquivo e o caminho relativo a --raw-dir em corpora.CORPUS_SPECS (o nome local). O arquivo no repositorio de origem esta em caminho_no_repositorio. O sha256 e dos bytes baixados da URL, sem conversao.",
+  "arquivos": {
+    "ISCXURL2016_train.csv": {
+      "corpus": "iscx2016",
+      "split": "train",
+      "caminho_no_repositorio": "data/ISCXURL2016/train.csv",
+      "url": "https://raw.githubusercontent.com/fcdalgic/GramBeddings/a47f86363590ae3587a4a1b5af20198d00e63c89/data/ISCXURL2016/train.csv",
+      "commit": "a47f863",
+      "bytes": 1657487,
+      "sha256": "bc853c163db30dabc424777d7508a8c46d1d35b72207fef23c64c1232e7000be"
+    },
+    "ISCXURL2016_test.csv": {
+      "corpus": "iscx2016",
+      "split": "test",
+      "caminho_no_repositorio": "data/ISCXURL2016/test.csv",
+      "url": "https://raw.githubusercontent.com/fcdalgic/GramBeddings/a47f86363590ae3587a4a1b5af20198d00e63c89/data/ISCXURL2016/test.csv",
+      "commit": "a47f863",
+      "bytes": 409840,
+      "sha256": "4e753043abf93269c7b40fd5bce80709a7ffb6db36170c7688f7ef18783ef50d"
+    },
+    "PhishStorm_train.csv": {
+      "corpus": "phishstorm",
+      "split": "train",
+      "caminho_no_repositorio": "data/PhishStorm/train.csv",
+      "url": "https://raw.githubusercontent.com/fcdalgic/GramBeddings/a47f86363590ae3587a4a1b5af20198d00e63c89/data/PhishStorm/train.csv",
+      "commit": "a47f863",
+      "bytes": 5092153,
+      "sha256": "049c5326fbfde86042892bd25a15733067369d9e08d3cbe993f76a4fc52962c0"
+    },
+    "PhishStorm_test.csv": {
+      "corpus": "phishstorm",
+      "split": "test",
+      "caminho_no_repositorio": "data/PhishStorm/test.csv",
+      "url": "https://raw.githubusercontent.com/fcdalgic/GramBeddings/a47f86363590ae3587a4a1b5af20198d00e63c89/data/PhishStorm/test.csv",
+      "commit": "a47f863",
+      "bytes": 1270526,
+      "sha256": "852fb49236426e7beee978625cd6ba73511df7f8db44e752a72ce3e2e655ead3"
+    },
+    "PDRCNN_train.csv": {
+      "corpus": "pdrcnn",
+      "split": "train",
+      "caminho_no_repositorio": "data/PDRCNN/train.csv",
+      "url": "https://raw.githubusercontent.com/fcdalgic/GramBeddings/a47f86363590ae3587a4a1b5af20198d00e63c89/data/PDRCNN/train.csv",
+      "commit": "a47f863",
+      "bytes": 8936065,
+      "sha256": "edd4b511affcb535f734c11be29c8570e266e8cf7f2a499d855b470d1295b0a6"
+    },
+    "PDRCNN_test.csv": {
+      "corpus": "pdrcnn",
+      "split": "test",
+      "caminho_no_repositorio": "data/PDRCNN/test.csv",
+      "url": "https://raw.githubusercontent.com/fcdalgic/GramBeddings/a47f86363590ae3587a4a1b5af20198d00e63c89/data/PDRCNN/test.csv",
+      "commit": "a47f863",
+      "bytes": 2221055,
+      "sha256": "657771af75aadc3e738e56409e41315544e7d3d3a71bd856b8d51a9036c43a39"
+    },
+    "kaggle_03-siddharthkumar25_train.csv": {
+      "corpus": "kaggle03",
+      "split": "train",
+      "caminho_no_repositorio": "data/kaggle/03-siddharthkumar25/train.csv",
+      "url": "https://raw.githubusercontent.com/fcdalgic/GramBeddings/a47f86363590ae3587a4a1b5af20198d00e63c89/data/kaggle/03-siddharthkumar25/train.csv",
+      "commit": "a47f863",
+      "bytes": 23044314,
+      "sha256": "6d69af822a47a23e6e46317d9f508bff471f99c8e377a14d91ecaca601dbe3ec"
+    },
+    "kaggle03_test.csv": {
+      "corpus": "kaggle03",
+      "split": "test",
+      "caminho_no_repositorio": "data/kaggle/03-siddharthkumar25/test.csv",
+      "url": "https://raw.githubusercontent.com/fcdalgic/GramBeddings/a47f86363590ae3587a4a1b5af20198d00e63c89/data/kaggle/03-siddharthkumar25/test.csv",
+      "commit": "a47f863",
+      "bytes": 5769660,
+      "sha256": "5b41e2f96f18d89664e9e60b0a9fd359ab55f3ca07638020e4905a4f05475e9e"
+    },
+    "kaggle_01-sid321axn_train.csv": {
+      "corpus": "sid321axn",
+      "split": "train",
+      "caminho_no_repositorio": "data/kaggle/01-sid321axn/train.csv",
+      "url": "https://raw.githubusercontent.com/fcdalgic/GramBeddings/a47f86363590ae3587a4a1b5af20198d00e63c89/data/kaggle/01-sid321axn/train.csv",
+      "commit": "a47f863",
+      "bytes": 33270899,
+      "sha256": "d783a35ba6f5f4aaf3bc2bb4b79ca04f9a4b8cfb82091056cc87ae02c93f4d55"
+    },
+    "kaggle01-sid321axn_test.csv": {
+      "corpus": "sid321axn",
+      "split": "test",
+      "caminho_no_repositorio": "data/kaggle/01-sid321axn/test.csv",
+      "url": "https://raw.githubusercontent.com/fcdalgic/GramBeddings/a47f86363590ae3587a4a1b5af20198d00e63c89/data/kaggle/01-sid321axn/test.csv",
+      "commit": "a47f863",
+      "bytes": 8303056,
+      "sha256": "951e44718c0412bfa704de54d5331374223aa552c50a02103e5d4dc2ce3919ba"
+    }
+  },
+  "fora_do_repositorio": {
+    "grambeddings": {
+      "arquivos": ["grambeddings/train.csv", "grambeddings/test.csv"],
+      "origem_declarada": "https://web.cs.hacettepe.edu.tr/~selman/grambeddings-dataset/",
+      "declarada_em": "data/grambeddings/ReadMe.md do repositorio de origem, no commit a47f863",
+      "observacao": "A pasta data/grambeddings do commit a47f863 so tem o ReadMe.md, que remete ao site acima. O dataset vem de um arquivo RAR protegido por senha, baixado do site de origem, e nao esta coberto pelo script de reconstrucao nem tem sha256 registrado aqui. O parquet versionado em corpora/grambeddings segue com o sha256 do corpora/manifest.json."
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "commit": "15a70f0",
+  "commit_codigo": "a56dab79264566926a2ae6af5c58216cebf527b1",
+  "psl_sha256": "027fe126522e646b2335c3d564750d7223f0994a1a460107ce4f3a40bd682310",
+  "strip_scheme": true,
+  "repeticao": false,
+  "particoes": {
+    "arquivo": "predicoes/particoes.parquet",
+    "sha256": "57f00242668fb5cdff61de15537776b5b8d168468d3edce378408b810c7bdb0a"
+  },
+  "dedup": {
+    "grambeddings/etld1": {
+      "n_antes": 800000,
+      "n_conflito_linhas": 2,
+      "n_conflito_urls": 1,
+      "n_duplicatas_removidas": 16619,
+      "n_final": 783379,
+      "n_sem_url_norm": 135
+    },
+    "grambeddings/oficial": {
+      "n_antes": 800000,
+      "n_conflito_linhas": 2,
+      "n_conflito_urls": 1,
+      "n_duplicatas_removidas": 11344,
+      "n_final": 788654,
+      "n_sem_url_norm": 135,
+      "n_repetidas_treino_teste": 5275
+    },
+    "iscx2016/etld1": {
+      "n_antes": 19965,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 5121,
+      "n_final": 14844,
+      "n_sem_url_norm": 0
+    },
+    "iscx2016/oficial": {
+      "n_antes": 19965,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 3716,
+      "n_final": 16249,
+      "n_sem_url_norm": 0,
+      "n_repetidas_treino_teste": 1405
+    },
+    "kaggle03/etld1": {
+      "n_antes": 450176,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 12718,
+      "n_final": 437458,
+      "n_sem_url_norm": 207
+    },
+    "kaggle03/oficial": {
+      "n_antes": 450176,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 9003,
+      "n_final": 441173,
+      "n_sem_url_norm": 207,
+      "n_repetidas_treino_teste": 3715
+    },
+    "phishstorm/etld1": {
+      "n_antes": 96018,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 11106,
+      "n_final": 84912,
+      "n_sem_url_norm": 9
+    },
+    "phishstorm/oficial": {
+      "n_antes": 96018,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 8039,
+      "n_final": 87979,
+      "n_sem_url_norm": 9,
+      "n_repetidas_treino_teste": 3067
+    }
+  },
+  "sessoes": [
+    {
+      "inicio": "2026-11-09T17:20:05.107327+00:00",
+      "fim": "2026-11-09T18:20:13.108374+00:00",
+      "segundos": 3608.0,
+      "commit_codigo": "a56dab79264566926a2ae6af5c58216cebf527b1"
+    }
+  ],
+  "tempo_parede_s": 3608.0,
+  "run_ids": [
+    "15a70f0-20261109T172005Z"
+  ],
+  "config_fingerprint": "f3c8cc7a683a00bf",
+  "contrato_features": "565a668dfbf4b884",
+  "gpu": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+  "gpu_disponivel": true,
+  "corpora": [
+    "iscx2016",
+    "phishstorm",
+    "kaggle03",
+    "grambeddings"
+  ],
+  "regimes": [
+    "oficial",
+    "etld1"
+  ],
+  "n_registros": 192,
+  "n_ajustes": 48,
+  "minutos_desta_execucao": 60.2,
+  "minutos_fase_matriz": 17.8,
+  "minutos_fase_loco": 42.4,
+  "minutos_ajuste_matriz": 9.2,
+  "minutos_ajuste_loco": 38.1,
+  "python": "3.14.2",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "split": {
+      "test_size": 0.2,
+      "val_size": 0.1,
+      "val_size_oficial": 0.1
+    },
+    "avaliacao": {
+      "criterio_limiar": "f1",
+      "ece_bins": 15,
+      "recalibrar": false,
+      "bootstrap_n": 500,
+      "bootstrap_nivel": 0.95
+    },
+    "modelos": {
+      "logistic_regression": {
+        "familia": "linear",
+        "escala": true,
+        "params": {
+          "max_iter": 1000,
+          "C": 1.0,
+          "solver": "lbfgs",
+          "tol": 0.0001
+        }
+      },
+      "random_forest": {
+        "familia": "bagging",
+        "escala": false,
+        "params": {
+          "n_estimators": 300,
+          "max_depth": null,
+          "min_samples_leaf": 2,
+          "max_features": "sqrt",
+          "n_jobs": -1
+        }
+      },
+      "xgboost": {
+        "familia": "boosting",
+        "escala": false,
+        "params": {
+          "n_estimators": 400,
+          "max_depth": 8,
+          "learning_rate": 0.1,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8,
+          "min_child_weight": 1,
+          "reg_lambda": 1.0,
+          "tree_method": "hist",
+          "eval_metric": "logloss"
+        }
+      },
+      "lightgbm": {
+        "familia": "boosting",
+        "escala": false,
+        "params": {
+          "n_estimators": 400,
+          "num_leaves": 63,
+          "max_depth": -1,
+          "learning_rate": 0.1,
+          "subsample": 0.8,
+          "subsample_freq": 1,
+          "colsample_bytree": 0.8,
+          "min_child_samples": 20,
+          "reg_lambda": 1.0,
+          "verbose": -1,
+          "deterministic": true,
+          "force_row_wise": true
+        }
+      },
+      "catboost": {
+        "familia": "boosting",
+        "escala": false,
+        "params": {
+          "iterations": 400,
+          "depth": 8,
+          "learning_rate": 0.1,
+          "l2_leaf_reg": 3.0,
+          "verbose": false,
+          "allow_writing_files": false
+        }
+      },
+      "mlp": {
+        "familia": "rede_neural",
+        "escala": true,
+        "params": {
+          "hidden_layer_sizes": [
+            128,
+            64
+          ],
+          "activation": "relu",
+          "solver": "adam",
+          "alpha": 0.0001,
+          "learning_rate_init": 0.001,
+          "max_iter": 200,
+          "early_stopping": true,
+          "n_iter_no_change": 10,
+          "validation_fraction": 0.1
+        }
+      }
+    }
+  },
+  "minutos_ajuste_total": 47.3
+}

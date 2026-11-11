@@ -1,0 +1,2970 @@
+[
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "logistic_regression",
+    "metrics": {
+      "auroc": 0.8246347799587634,
+      "auc_pr": 0.8303617488376803,
+      "precision": 0.6606607506895311,
+      "recall": 0.8593098069799181,
+      "f1": 0.7470042880629142,
+      "fpr": 0.42584116075795386,
+      "mcc": 0.45110120974888257,
+      "brier": 0.19581023566830677,
+      "ece": 0.14113015799779935,
+      "threshold": 0.15605853497982025,
+      "tp": 66111,
+      "fp": 33957,
+      "tn": 45784,
+      "fn": 10824
+    },
+    "fit_seconds": 0.7042220000002999,
+    "n_test": 156676,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "logistic_regression",
+      "familia": "linear",
+      "escala": true,
+      "params": {
+        "max_iter": 1000,
+        "C": 1.0,
+        "solver": "lbfgs",
+        "tol": 0.0001
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.822784,
+      "auroc_hi": 0.826775,
+      "auc_pr_lo": 0.828593,
+      "auc_pr_hi": 0.832451,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_grambeddings__logistic_regression.parquet",
+      "sha256": "e3420168f8170cc1a62bfca048b390f69aa55bbb28560186026b9e7908ffec09"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "random_forest",
+    "metrics": {
+      "auroc": 0.8459681029446957,
+      "auc_pr": 0.8118864841676692,
+      "precision": 0.6114171382647423,
+      "recall": 0.9493078572821213,
+      "f1": 0.7437865031799457,
+      "fpr": 0.5820970391642944,
+      "mcc": 0.43133038444891475,
+      "brier": 0.2219983469038739,
+      "ece": 0.21524024927282948,
+      "threshold": 0.3879986719926378,
+      "tp": 73035,
+      "fp": 46417,
+      "tn": 33324,
+      "fn": 3900
+    },
+    "fit_seconds": 40.15347759999713,
+    "n_test": 156676,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "random_forest",
+      "familia": "bagging",
+      "escala": false,
+      "params": {
+        "n_estimators": 300,
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "n_jobs": -1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.844021,
+      "auroc_hi": 0.848111,
+      "auc_pr_lo": 0.809154,
+      "auc_pr_hi": 0.81472,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_grambeddings__random_forest.parquet",
+      "sha256": "3f4d7a2e54991b2151f6c5d5617152a281b9d32f17eba4ed05edcc24e68c9ee8"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "xgboost",
+    "metrics": {
+      "auroc": 0.8745527837737513,
+      "auc_pr": 0.8662183441547824,
+      "precision": 0.6248258532124206,
+      "recall": 0.9502047182686684,
+      "f1": 0.7539059680097352,
+      "fpr": 0.5504696454772325,
+      "mcc": 0.4595307566030274,
+      "brier": 0.22502228858092124,
+      "ece": 0.22881858910831065,
+      "threshold": 0.34481731057167053,
+      "tp": 73104,
+      "fp": 43895,
+      "tn": 35846,
+      "fn": 3831
+    },
+    "fit_seconds": 2.0604222000038135,
+    "n_test": 156676,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "xgboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "max_depth": 8,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 1,
+        "reg_lambda": 1.0,
+        "tree_method": "hist",
+        "eval_metric": "logloss"
+      },
+      "seed": 42,
+      "device_params": {
+        "device": "cuda"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.872914,
+      "auroc_hi": 0.876414,
+      "auc_pr_lo": 0.86417,
+      "auc_pr_hi": 0.868374,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_grambeddings__xgboost.parquet",
+      "sha256": "a760c1247cc92e99e189ac41b367e71963706376d45aeb2d043e73c3ce3913ab"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "lightgbm",
+    "metrics": {
+      "auroc": 0.8747614484560954,
+      "auc_pr": 0.864579999290511,
+      "precision": 0.6194438343667111,
+      "recall": 0.9531552609345552,
+      "f1": 0.7508921394451071,
+      "fpr": 0.5649665793004853,
+      "mcc": 0.4515828951517595,
+      "brier": 0.2147013553954887,
+      "ece": 0.2200206857299442,
+      "threshold": 0.31711949268975376,
+      "tp": 73331,
+      "fp": 45051,
+      "tn": 34690,
+      "fn": 3604
+    },
+    "fit_seconds": 2.0603760999947554,
+    "n_test": 156676,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "lightgbm",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "num_leaves": 63,
+        "max_depth": -1,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "subsample_freq": 1,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 20,
+        "reg_lambda": 1.0,
+        "verbose": -1,
+        "deterministic": true,
+        "force_row_wise": true
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.873103,
+      "auroc_hi": 0.876616,
+      "auc_pr_lo": 0.862479,
+      "auc_pr_hi": 0.86681,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_grambeddings__lightgbm.parquet",
+      "sha256": "6b93f109c29b60a98f7698641a31fcdff38647ca1f360a559b6c04dc04c6a290"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "catboost",
+    "metrics": {
+      "auroc": 0.8755708135112774,
+      "auc_pr": 0.8737632038664296,
+      "precision": 0.6252212313349486,
+      "recall": 0.9458893871449925,
+      "f1": 0.752830666894258,
+      "fpr": 0.5470460616245093,
+      "mcc": 0.4562305229970797,
+      "brier": 0.221555260105574,
+      "ece": 0.22604679573148218,
+      "threshold": 0.3811196084890981,
+      "tp": 72772,
+      "fp": 43622,
+      "tn": 36119,
+      "fn": 4163
+    },
+    "fit_seconds": 4.454625599995779,
+    "n_test": 156676,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "catboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "iterations": 400,
+        "depth": 8,
+        "learning_rate": 0.1,
+        "l2_leaf_reg": 3.0,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "seed": 42,
+      "device_params": {
+        "task_type": "GPU",
+        "devices": "0"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.873941,
+      "auroc_hi": 0.877415,
+      "auc_pr_lo": 0.87192,
+      "auc_pr_hi": 0.875672,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_grambeddings__catboost.parquet",
+      "sha256": "fcdf4008e22247129f3586e023659c38af841c4b676f3554617522a0a43af9f8"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "mlp",
+    "metrics": {
+      "auroc": 0.8697447368125053,
+      "auc_pr": 0.8652850185466108,
+      "precision": 0.6303953635661672,
+      "recall": 0.9444336127900176,
+      "f1": 0.7561031447064455,
+      "fpr": 0.5342421088273285,
+      "mcc": 0.46501766844745185,
+      "brier": 0.21087131958327454,
+      "ece": 0.21421388145232861,
+      "threshold": 0.35705047845840454,
+      "tp": 72660,
+      "fp": 42601,
+      "tn": 37140,
+      "fn": 4275
+    },
+    "fit_seconds": 461.56812059999356,
+    "n_test": 156676,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": "agrupada_etld1",
+      "model": "mlp",
+      "familia": "rede_neural",
+      "escala": true,
+      "params": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "activation": "relu",
+        "solver": "adam",
+        "alpha": 0.0001,
+        "learning_rate_init": 0.001,
+        "max_iter": 200,
+        "early_stopping": true,
+        "n_iter_no_change": 10,
+        "validation_fraction": 0.1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.868013,
+      "auroc_hi": 0.87164,
+      "auc_pr_lo": 0.863375,
+      "auc_pr_hi": 0.86725,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_grambeddings__mlp.parquet",
+      "sha256": "a9b79bcdeb781b332ff3324b7c6cf2a3bca139ff6f36acffbf910ad779b23a1c"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "logistic_regression",
+    "metrics": {
+      "auroc": 0.7404091091378364,
+      "auc_pr": 0.6005585737405178,
+      "precision": 0.561246040126716,
+      "recall": 0.8635255889520714,
+      "f1": 0.68032,
+      "fpr": 0.4781357882623705,
+      "mcc": 0.3950571350990546,
+      "brier": 0.22686923878908333,
+      "ece": 0.20550184394956847,
+      "threshold": 0.3763487637042999,
+      "tp": 1063,
+      "fp": 831,
+      "tn": 907,
+      "fn": 168
+    },
+    "fit_seconds": 2.0627042000051006,
+    "n_test": 2969,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "logistic_regression",
+      "familia": "linear",
+      "escala": true,
+      "params": {
+        "max_iter": 1000,
+        "C": 1.0,
+        "solver": "lbfgs",
+        "tol": 0.0001
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.721355,
+      "auroc_hi": 0.75875,
+      "auc_pr_lo": 0.577507,
+      "auc_pr_hi": 0.62246,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_iscx2016__logistic_regression.parquet",
+      "sha256": "aec100381cb98c92a9c3693269e91de5d02c0feec67e2159f8b1fad0c9434226"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "random_forest",
+    "metrics": {
+      "auroc": 0.8933015436475625,
+      "auc_pr": 0.8439025294969851,
+      "precision": 0.6650660264105642,
+      "recall": 0.9000812347684809,
+      "f1": 0.7649292371418709,
+      "fpr": 0.32105868814729577,
+      "mcc": 0.5748303383496358,
+      "brier": 0.15105462677860496,
+      "ece": 0.1120297026138144,
+      "threshold": 0.4581757319893802,
+      "tp": 1108,
+      "fp": 558,
+      "tn": 1180,
+      "fn": 123
+    },
+    "fit_seconds": 98.965036900001,
+    "n_test": 2969,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "random_forest",
+      "familia": "bagging",
+      "escala": false,
+      "params": {
+        "n_estimators": 300,
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "n_jobs": -1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.881826,
+      "auroc_hi": 0.905155,
+      "auc_pr_lo": 0.824593,
+      "auc_pr_hi": 0.863204,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_iscx2016__random_forest.parquet",
+      "sha256": "b70e0295bf51752d113f27280bab3d80d0846e516e90805654993e08a2b32ace"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "xgboost",
+    "metrics": {
+      "auroc": 0.8667109453801347,
+      "auc_pr": 0.7566646688688226,
+      "precision": 0.7466931216931217,
+      "recall": 0.917140536149472,
+      "f1": 0.8231862923806053,
+      "fpr": 0.22036823935558114,
+      "mcc": 0.6866558369279568,
+      "brier": 0.13803268640023197,
+      "ece": 0.09725512452757445,
+      "threshold": 0.42151904106140137,
+      "tp": 1129,
+      "fp": 383,
+      "tn": 1355,
+      "fn": 102
+    },
+    "fit_seconds": 3.2593191000050865,
+    "n_test": 2969,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "xgboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "max_depth": 8,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 1,
+        "reg_lambda": 1.0,
+        "tree_method": "hist",
+        "eval_metric": "logloss"
+      },
+      "seed": 42,
+      "device_params": {
+        "device": "cuda"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.852995,
+      "auroc_hi": 0.879951,
+      "auc_pr_lo": 0.731969,
+      "auc_pr_hi": 0.779207,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_iscx2016__xgboost.parquet",
+      "sha256": "3bd8967de905f8e07cccce7e5357e55f688985b6f9aeb09ea91e80a1586ee19f"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "lightgbm",
+    "metrics": {
+      "auroc": 0.8022251222027055,
+      "auc_pr": 0.6829153327774691,
+      "precision": 0.676913803496082,
+      "recall": 0.9122664500406173,
+      "f1": 0.7771626297577854,
+      "fpr": 0.3084004602991945,
+      "mcc": 0.5991501082737561,
+      "brier": 0.17966303191523386,
+      "ece": 0.1509431195898199,
+      "threshold": 0.4375500912742236,
+      "tp": 1123,
+      "fp": 536,
+      "tn": 1202,
+      "fn": 108
+    },
+    "fit_seconds": 4.7694940000001225,
+    "n_test": 2969,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "lightgbm",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "num_leaves": 63,
+        "max_depth": -1,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "subsample_freq": 1,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 20,
+        "reg_lambda": 1.0,
+        "verbose": -1,
+        "deterministic": true,
+        "force_row_wise": true
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.784747,
+      "auroc_hi": 0.817198,
+      "auc_pr_lo": 0.659428,
+      "auc_pr_hi": 0.703941,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_iscx2016__lightgbm.parquet",
+      "sha256": "013c21c5f5e696c63de1fc1accbbe71aa9e6f3802006c8109fbf69021589bf1e"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "catboost",
+    "metrics": {
+      "auroc": 0.8617106602638587,
+      "auc_pr": 0.7575461090558772,
+      "precision": 0.677771047849788,
+      "recall": 0.909017059301381,
+      "f1": 0.7765440666204024,
+      "fpr": 0.30609896432681244,
+      "mcc": 0.5978345209192899,
+      "brier": 0.15317301045493428,
+      "ece": 0.0957662612767422,
+      "threshold": 0.4406834846213247,
+      "tp": 1119,
+      "fp": 532,
+      "tn": 1206,
+      "fn": 112
+    },
+    "fit_seconds": 5.647080299997469,
+    "n_test": 2969,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "catboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "iterations": 400,
+        "depth": 8,
+        "learning_rate": 0.1,
+        "l2_leaf_reg": 3.0,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "seed": 42,
+      "device_params": {
+        "task_type": "GPU",
+        "devices": "0"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.847962,
+      "auroc_hi": 0.874944,
+      "auc_pr_lo": 0.732736,
+      "auc_pr_hi": 0.780393,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_iscx2016__catboost.parquet",
+      "sha256": "50060edea41b75d33253c828507643282e29e2853664c557d4de256e6367f2ef"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "mlp",
+    "metrics": {
+      "auroc": 0.8178581410979687,
+      "auc_pr": 0.7040656494088025,
+      "precision": 0.6827094474153298,
+      "recall": 0.9333874898456539,
+      "f1": 0.7886067261496226,
+      "fpr": 0.30724971231300346,
+      "mcc": 0.6225314227009461,
+      "brier": 0.1733221713764707,
+      "ece": 0.1452923018803647,
+      "threshold": 0.2524162232875824,
+      "tp": 1149,
+      "fp": 534,
+      "tn": 1204,
+      "fn": 82
+    },
+    "fit_seconds": 198.30435159999615,
+    "n_test": 2969,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": "agrupada_etld1",
+      "model": "mlp",
+      "familia": "rede_neural",
+      "escala": true,
+      "params": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "activation": "relu",
+        "solver": "adam",
+        "alpha": 0.0001,
+        "learning_rate_init": 0.001,
+        "max_iter": 200,
+        "early_stopping": true,
+        "n_iter_no_change": 10,
+        "validation_fraction": 0.1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.801453,
+      "auroc_hi": 0.832271,
+      "auc_pr_lo": 0.681109,
+      "auc_pr_hi": 0.725376,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_iscx2016__mlp.parquet",
+      "sha256": "7c0b878dab33e4e71f6b62326c5c30b99ec3037672674540a75adae711088b2e"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "logistic_regression",
+    "metrics": {
+      "auroc": 0.9332935255250954,
+      "auc_pr": 0.8272589578582867,
+      "precision": 0.7628847530422334,
+      "recall": 0.6960757633483916,
+      "f1": 0.7279505933915814,
+      "fpr": 0.05750951257975376,
+      "mcc": 0.6608611281696555,
+      "brier": 0.07725832207946245,
+      "ece": 0.028057384659551893,
+      "threshold": 0.42345184087753296,
+      "tp": 12789,
+      "fp": 3975,
+      "tn": 65144,
+      "fn": 5584
+    },
+    "fit_seconds": 1.5552471999981208,
+    "n_test": 87492,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "logistic_regression",
+      "familia": "linear",
+      "escala": true,
+      "params": {
+        "max_iter": 1000,
+        "C": 1.0,
+        "solver": "lbfgs",
+        "tol": 0.0001
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.931432,
+      "auroc_hi": 0.935155,
+      "auc_pr_lo": 0.823075,
+      "auc_pr_hi": 0.831456,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_kaggle03__logistic_regression.parquet",
+      "sha256": "50e2a8758bcb9324d25233ba8cfced27c684570abe671d37a4d49e715582bac7"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "random_forest",
+    "metrics": {
+      "auroc": 0.9258985510753492,
+      "auc_pr": 0.8322384978832269,
+      "precision": 0.7435019788212643,
+      "recall": 0.7566537854460349,
+      "f1": 0.7500202314477624,
+      "fpr": 0.06938757794528277,
+      "mcc": 0.6828744949049514,
+      "brier": 0.07822052376490221,
+      "ece": 0.04738680713806634,
+      "threshold": 0.47565233989803857,
+      "tp": 13902,
+      "fp": 4796,
+      "tn": 64323,
+      "fn": 4471
+    },
+    "fit_seconds": 55.723858199999086,
+    "n_test": 87492,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "random_forest",
+      "familia": "bagging",
+      "escala": false,
+      "params": {
+        "n_estimators": 300,
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "n_jobs": -1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.92363,
+      "auroc_hi": 0.928238,
+      "auc_pr_lo": 0.828415,
+      "auc_pr_hi": 0.836257,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_kaggle03__random_forest.parquet",
+      "sha256": "7984a4ee43a911bae4599a43afdc73d1841acf85c5ab7c56392590f2f8b3040b"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "xgboost",
+    "metrics": {
+      "auroc": 0.9349338445564038,
+      "auc_pr": 0.8408480941524251,
+      "precision": 0.7492540494458653,
+      "recall": 0.7653622162956513,
+      "f1": 0.7572224765084409,
+      "fpr": 0.06808547577366571,
+      "mcc": 0.691879920898117,
+      "brier": 0.0740465681806117,
+      "ece": 0.02453129126153241,
+      "threshold": 0.4529534876346588,
+      "tp": 14062,
+      "fp": 4706,
+      "tn": 64413,
+      "fn": 4311
+    },
+    "fit_seconds": 2.7604415000023437,
+    "n_test": 87492,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "xgboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "max_depth": 8,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 1,
+        "reg_lambda": 1.0,
+        "tree_method": "hist",
+        "eval_metric": "logloss"
+      },
+      "seed": 42,
+      "device_params": {
+        "device": "cuda"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.933023,
+      "auroc_hi": 0.936908,
+      "auc_pr_lo": 0.837174,
+      "auc_pr_hi": 0.84477,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_kaggle03__xgboost.parquet",
+      "sha256": "37efc45a0a3b255d434eb6b2ea0c074feb9ae3bdde43bcfae30e122b38788b3c"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "lightgbm",
+    "metrics": {
+      "auroc": 0.9380683293141053,
+      "auc_pr": 0.8481972013659247,
+      "precision": 0.7688282772056777,
+      "recall": 0.7517552930931258,
+      "f1": 0.7601959381363862,
+      "fpr": 0.06008478131917418,
+      "mcc": 0.697425247521032,
+      "brier": 0.07205187697565027,
+      "ece": 0.02216361158180502,
+      "threshold": 0.4798835951948313,
+      "tp": 13812,
+      "fp": 4153,
+      "tn": 64966,
+      "fn": 4561
+    },
+    "fit_seconds": 3.2674139000009745,
+    "n_test": 87492,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "lightgbm",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "num_leaves": 63,
+        "max_depth": -1,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "subsample_freq": 1,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 20,
+        "reg_lambda": 1.0,
+        "verbose": -1,
+        "deterministic": true,
+        "force_row_wise": true
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.936202,
+      "auroc_hi": 0.939968,
+      "auc_pr_lo": 0.84461,
+      "auc_pr_hi": 0.851995,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_kaggle03__lightgbm.parquet",
+      "sha256": "37d4feb3cc02d5831c0b51de48c057ff9a4c46b0c8892c906a68ae39aec5024c"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "catboost",
+    "metrics": {
+      "auroc": 0.9362622880808478,
+      "auc_pr": 0.8462580455693792,
+      "precision": 0.7651531971580817,
+      "recall": 0.750285745387253,
+      "f1": 0.7576465415372777,
+      "fpr": 0.06121326986790897,
+      "mcc": 0.6940760735448046,
+      "brier": 0.07285135359066579,
+      "ece": 0.028258027604576446,
+      "threshold": 0.48591076565289393,
+      "tp": 13785,
+      "fp": 4231,
+      "tn": 64888,
+      "fn": 4588
+    },
+    "fit_seconds": 5.10138900000311,
+    "n_test": 87492,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "catboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "iterations": 400,
+        "depth": 8,
+        "learning_rate": 0.1,
+        "l2_leaf_reg": 3.0,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "seed": 42,
+      "device_params": {
+        "task_type": "GPU",
+        "devices": "0"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.934355,
+      "auroc_hi": 0.938215,
+      "auc_pr_lo": 0.842653,
+      "auc_pr_hi": 0.850081,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_kaggle03__catboost.parquet",
+      "sha256": "3d54fc048d04d9bfaf9148fb18ebaae0e9778dcb1096b2976670d9a1d5a0a901"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "mlp",
+    "metrics": {
+      "auroc": 0.9346782716586035,
+      "auc_pr": 0.8366623286379714,
+      "precision": 0.7186307970287091,
+      "recall": 0.7792957056550373,
+      "f1": 0.7477348095151057,
+      "fpr": 0.08110649748983637,
+      "mcc": 0.6781145981080727,
+      "brier": 0.07546027413037129,
+      "ece": 0.026969378818642628,
+      "threshold": 0.411802738904953,
+      "tp": 14318,
+      "fp": 5606,
+      "tn": 63513,
+      "fn": 4055
+    },
+    "fit_seconds": 158.70080230000167,
+    "n_test": 87492,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": "agrupada_etld1",
+      "model": "mlp",
+      "familia": "rede_neural",
+      "escala": true,
+      "params": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "activation": "relu",
+        "solver": "adam",
+        "alpha": 0.0001,
+        "learning_rate_init": 0.001,
+        "max_iter": 200,
+        "early_stopping": true,
+        "n_iter_no_change": 10,
+        "validation_fraction": 0.1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.932776,
+      "auroc_hi": 0.936603,
+      "auc_pr_lo": 0.83272,
+      "auc_pr_hi": 0.84079,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_kaggle03__mlp.parquet",
+      "sha256": "a4ee8f32398fcb9a746fb3c3bc4aabae04333ce3c37c96640c961bf6d649e740"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "logistic_regression",
+    "metrics": {
+      "auroc": 0.8717295937008684,
+      "auc_pr": 0.8668287491474056,
+      "precision": 0.6773038098339303,
+      "recall": 0.8448415922014623,
+      "f1": 0.7518525212362192,
+      "fpr": 0.30981659024593583,
+      "mcc": 0.5324033166316084,
+      "brier": 0.14431982810368404,
+      "ece": 0.07175649067854781,
+      "threshold": 0.38649606704711914,
+      "tp": 6240,
+      "fp": 2973,
+      "tn": 6623,
+      "fn": 1146
+    },
+    "fit_seconds": 2.5426805000024615,
+    "n_test": 16982,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "logistic_regression",
+      "familia": "linear",
+      "escala": true,
+      "params": {
+        "max_iter": 1000,
+        "C": 1.0,
+        "solver": "lbfgs",
+        "tol": 0.0001
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.866456,
+      "auroc_hi": 0.877295,
+      "auc_pr_lo": 0.861126,
+      "auc_pr_hi": 0.872843,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_phishstorm__logistic_regression.parquet",
+      "sha256": "435f78bbcae2fb0b584e613a8ece72c3c32f7d605bba207ab876072f5c7b03af"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "random_forest",
+    "metrics": {
+      "auroc": 0.9361347152273821,
+      "auc_pr": 0.9357104530050715,
+      "precision": 0.8197755076302182,
+      "recall": 0.8800433252098565,
+      "f1": 0.8488410055501143,
+      "fpr": 0.14891621508962066,
+      "mcc": 0.7265026286188317,
+      "brier": 0.1050693615459826,
+      "ece": 0.08652662346962071,
+      "threshold": 0.5099256709116986,
+      "tp": 6500,
+      "fp": 1429,
+      "tn": 8167,
+      "fn": 886
+    },
+    "fit_seconds": 95.61192419999861,
+    "n_test": 16982,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "random_forest",
+      "familia": "bagging",
+      "escala": false,
+      "params": {
+        "n_estimators": 300,
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "n_jobs": -1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.932311,
+      "auroc_hi": 0.940158,
+      "auc_pr_lo": 0.932312,
+      "auc_pr_hi": 0.939484,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_phishstorm__random_forest.parquet",
+      "sha256": "5d82fb45c23bd2fb123432194a4e58c688935f89458787445223b0c54a787624"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "xgboost",
+    "metrics": {
+      "auroc": 0.9353406177115725,
+      "auc_pr": 0.9363544159479038,
+      "precision": 0.8017135862913096,
+      "recall": 0.8868128892499323,
+      "f1": 0.8421187966058112,
+      "fpr": 0.16882034180908712,
+      "mcc": 0.7123959391662287,
+      "brier": 0.10624086886028415,
+      "ece": 0.0870213640820878,
+      "threshold": 0.4780348837375641,
+      "tp": 6550,
+      "fp": 1620,
+      "tn": 7976,
+      "fn": 836
+    },
+    "fit_seconds": 3.1976153000068734,
+    "n_test": 16982,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "xgboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "max_depth": 8,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 1,
+        "reg_lambda": 1.0,
+        "tree_method": "hist",
+        "eval_metric": "logloss"
+      },
+      "seed": 42,
+      "device_params": {
+        "device": "cuda"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.931541,
+      "auroc_hi": 0.939262,
+      "auc_pr_lo": 0.933133,
+      "auc_pr_hi": 0.940013,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_phishstorm__xgboost.parquet",
+      "sha256": "6b1da5e78d04b638767350c882e1f2d3572cfd13d99253deb12c346409a420e9"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "lightgbm",
+    "metrics": {
+      "auroc": 0.9345883890604747,
+      "auc_pr": 0.9344915394991958,
+      "precision": 0.7783030016544552,
+      "recall": 0.8916869753587869,
+      "f1": 0.831145885916204,
+      "fpr": 0.19549812421842436,
+      "mcc": 0.6902724298299998,
+      "brier": 0.10720455714395519,
+      "ece": 0.08464793827229843,
+      "threshold": 0.44935516406776416,
+      "tp": 6586,
+      "fp": 1876,
+      "tn": 7720,
+      "fn": 800
+    },
+    "fit_seconds": 4.676018099999055,
+    "n_test": 16982,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "lightgbm",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "num_leaves": 63,
+        "max_depth": -1,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "subsample_freq": 1,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 20,
+        "reg_lambda": 1.0,
+        "verbose": -1,
+        "deterministic": true,
+        "force_row_wise": true
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.930846,
+      "auroc_hi": 0.938462,
+      "auc_pr_lo": 0.931191,
+      "auc_pr_hi": 0.938123,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_phishstorm__lightgbm.parquet",
+      "sha256": "0e40a8ad902b509c409f9a8df5c5f3ae720cbf2e6fef963f58f168839f3aed5b"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "catboost",
+    "metrics": {
+      "auroc": 0.9297806088420044,
+      "auc_pr": 0.93007701055773,
+      "precision": 0.734297928313055,
+      "recall": 0.9069861900893582,
+      "f1": 0.8115573323641649,
+      "fpr": 0.25260525218841184,
+      "mcc": 0.6506207790519899,
+      "brier": 0.11166749498501746,
+      "ece": 0.09191169722106496,
+      "threshold": 0.39681704093451814,
+      "tp": 6699,
+      "fp": 2424,
+      "tn": 7172,
+      "fn": 687
+    },
+    "fit_seconds": 5.359730700001819,
+    "n_test": 16982,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "catboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "iterations": 400,
+        "depth": 8,
+        "learning_rate": 0.1,
+        "l2_leaf_reg": 3.0,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "seed": 42,
+      "device_params": {
+        "task_type": "GPU",
+        "devices": "0"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.925796,
+      "auroc_hi": 0.933847,
+      "auc_pr_lo": 0.926616,
+      "auc_pr_hi": 0.933868,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_phishstorm__catboost.parquet",
+      "sha256": "ee2cc8b0d104ef4191480a0c38cb29be236769f85d1f891c1d47ba721d6161c1"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "etld1",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "mlp",
+    "metrics": {
+      "auroc": 0.9296357362209885,
+      "auc_pr": 0.9290822763808914,
+      "precision": 0.8002230759697608,
+      "recall": 0.8742215001353912,
+      "f1": 0.8355871886120996,
+      "fpr": 0.16798666110879534,
+      "mcc": 0.7010953684426573,
+      "brier": 0.11018569688766698,
+      "ece": 0.08260250279203346,
+      "threshold": 0.4895099699497223,
+      "tp": 6457,
+      "fp": 1612,
+      "tn": 7984,
+      "fn": 929
+    },
+    "fit_seconds": 132.54322620000312,
+    "n_test": 16982,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": "agrupada_etld1",
+      "model": "mlp",
+      "familia": "rede_neural",
+      "escala": true,
+      "params": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "activation": "relu",
+        "solver": "adam",
+        "alpha": 0.0001,
+        "learning_rate_init": 0.001,
+        "max_iter": 200,
+        "early_stopping": true,
+        "n_iter_no_change": 10,
+        "validation_fraction": 0.1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.925683,
+      "auroc_hi": 0.933753,
+      "auc_pr_lo": 0.925351,
+      "auc_pr_hi": 0.933228,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/etld1__uniao_sem_phishstorm__mlp.parquet",
+      "sha256": "156a4d24dfde46aa736d86f74cda74c770f8e3c586f1cc2ad9ef33122801bf11"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "logistic_regression",
+    "metrics": {
+      "auroc": 0.8273801785531396,
+      "auc_pr": 0.8369163055116149,
+      "precision": 0.7647066977156798,
+      "recall": 0.6951563720672362,
+      "f1": 0.728274787797183,
+      "fpr": 0.212357385908727,
+      "mcc": 0.4849534871010719,
+      "brier": 0.19134404787884238,
+      "ece": 0.13220891001961474,
+      "threshold": 0.49808600544929504,
+      "tp": 55169,
+      "fp": 16975,
+      "tn": 62961,
+      "fn": 24193
+    },
+    "fit_seconds": 0.8343045000001439,
+    "n_test": 159298,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "logistic_regression",
+      "familia": "linear",
+      "escala": true,
+      "params": {
+        "max_iter": 1000,
+        "C": 1.0,
+        "solver": "lbfgs",
+        "tol": 0.0001
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.82544,
+      "auroc_hi": 0.8293,
+      "auc_pr_lo": 0.834966,
+      "auc_pr_hi": 0.838852,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_grambeddings__logistic_regression.parquet",
+      "sha256": "712da2b315626623bbab0f0857a61ed7cd12572a0574102ecfd19d957e81ea79"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "random_forest",
+    "metrics": {
+      "auroc": 0.8204296802434009,
+      "auc_pr": 0.7944967947804613,
+      "precision": 0.6261039060963829,
+      "recall": 0.9228094050049142,
+      "f1": 0.74603861806217,
+      "fpr": 0.5471252001601281,
+      "mcc": 0.42525810419793975,
+      "brier": 0.22674308321856762,
+      "ece": 0.2079800278821792,
+      "threshold": 0.4713629156713906,
+      "tp": 73236,
+      "fp": 43735,
+      "tn": 36201,
+      "fn": 6126
+    },
+    "fit_seconds": 44.45718019999913,
+    "n_test": 159298,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "random_forest",
+      "familia": "bagging",
+      "escala": false,
+      "params": {
+        "n_estimators": 300,
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "n_jobs": -1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.818424,
+      "auroc_hi": 0.822434,
+      "auc_pr_lo": 0.791757,
+      "auc_pr_hi": 0.797188,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_grambeddings__random_forest.parquet",
+      "sha256": "bd14ef20994d8b5e9756c134a170a2536b6d3b70059ac30ff51318919db0164f"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "xgboost",
+    "metrics": {
+      "auroc": 0.8576974534347621,
+      "auc_pr": 0.8616178518136035,
+      "precision": 0.6511627906976745,
+      "recall": 0.9197852876691616,
+      "f1": 0.7625076385515739,
+      "fpr": 0.48920386309047237,
+      "mcc": 0.4714882324053289,
+      "brier": 0.22739977833051767,
+      "ece": 0.2237346366131006,
+      "threshold": 0.4913451373577118,
+      "tp": 72996,
+      "fp": 39105,
+      "tn": 40831,
+      "fn": 6366
+    },
+    "fit_seconds": 2.2292069000031915,
+    "n_test": 159298,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "xgboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "max_depth": 8,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 1,
+        "reg_lambda": 1.0,
+        "tree_method": "hist",
+        "eval_metric": "logloss"
+      },
+      "seed": 42,
+      "device_params": {
+        "device": "cuda"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.855951,
+      "auroc_hi": 0.859484,
+      "auc_pr_lo": 0.859696,
+      "auc_pr_hi": 0.863599,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_grambeddings__xgboost.parquet",
+      "sha256": "741b4f529501d24508693b0b002fbaba70338771f869770d1015cb3104e2ee83"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "lightgbm",
+    "metrics": {
+      "auroc": 0.8578970727267281,
+      "auc_pr": 0.855335907771879,
+      "precision": 0.651341850754791,
+      "recall": 0.9198986920692522,
+      "f1": 0.7626693689082039,
+      "fpr": 0.48887860288230583,
+      "mcc": 0.47191937936403233,
+      "brier": 0.2193140107259979,
+      "ece": 0.21855175506126284,
+      "threshold": 0.49755247070159675,
+      "tp": 73005,
+      "fp": 39079,
+      "tn": 40857,
+      "fn": 6357
+    },
+    "fit_seconds": 2.0889850000021397,
+    "n_test": 159298,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "lightgbm",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "num_leaves": 63,
+        "max_depth": -1,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "subsample_freq": 1,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 20,
+        "reg_lambda": 1.0,
+        "verbose": -1,
+        "deterministic": true,
+        "force_row_wise": true
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.856151,
+      "auroc_hi": 0.859708,
+      "auc_pr_lo": 0.85321,
+      "auc_pr_hi": 0.857476,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_grambeddings__lightgbm.parquet",
+      "sha256": "a0dd1939d363763112a4ad217bec01ce5beca7fc407170bf35173758cb3d8b79"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "catboost",
+    "metrics": {
+      "auroc": 0.8555191285472117,
+      "auc_pr": 0.8572305701878482,
+      "precision": 0.6446523638550381,
+      "recall": 0.9185252387792646,
+      "f1": 0.7575971731448763,
+      "fpr": 0.5026771417133707,
+      "mcc": 0.45815053365749964,
+      "brier": 0.22284581283121319,
+      "ece": 0.22000509034226012,
+      "threshold": 0.4742363313112845,
+      "tp": 72896,
+      "fp": 40182,
+      "tn": 39754,
+      "fn": 6466
+    },
+    "fit_seconds": 4.386820599997009,
+    "n_test": 159298,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "catboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "iterations": 400,
+        "depth": 8,
+        "learning_rate": 0.1,
+        "l2_leaf_reg": 3.0,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "seed": 42,
+      "device_params": {
+        "task_type": "GPU",
+        "devices": "0"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.853773,
+      "auroc_hi": 0.857307,
+      "auc_pr_lo": 0.855225,
+      "auc_pr_hi": 0.859294,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_grambeddings__catboost.parquet",
+      "sha256": "21fa45f3658fd96c5841f5a9b9d9440c3bdf461ffd8712b281fb981c6a651c19"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_grambeddings",
+    "test_corpus": "grambeddings",
+    "model": "mlp",
+    "metrics": {
+      "auroc": 0.8513442928746364,
+      "auc_pr": 0.8626286738997664,
+      "precision": 0.6597397087172676,
+      "recall": 0.9012751694765757,
+      "f1": 0.7618210769042332,
+      "fpr": 0.46149419535628505,
+      "mcc": 0.4716148082402027,
+      "brier": 0.21810166517259522,
+      "ece": 0.2075568416372237,
+      "threshold": 0.4513118863105774,
+      "tp": 71527,
+      "fp": 36890,
+      "tn": 43046,
+      "fn": 7835
+    },
+    "fit_seconds": 57.851440600003116,
+    "n_test": 159298,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": "linha",
+      "model": "mlp",
+      "familia": "rede_neural",
+      "escala": true,
+      "params": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "activation": "relu",
+        "solver": "adam",
+        "alpha": 0.0001,
+        "learning_rate_init": 0.001,
+        "max_iter": 200,
+        "early_stopping": true,
+        "n_iter_no_change": 10,
+        "validation_fraction": 0.1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.849543,
+      "auroc_hi": 0.85322,
+      "auc_pr_lo": 0.860833,
+      "auc_pr_hi": 0.864489,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_grambeddings__mlp.parquet",
+      "sha256": "46fff4ead15acd5a420ae95e9708a6351abe8b4a140022eed3f031cb8cb1b217"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "logistic_regression",
+    "metrics": {
+      "auroc": 0.7490140593594135,
+      "auc_pr": 0.6964727643698225,
+      "precision": 0.6320384111741597,
+      "recall": 0.8080357142857143,
+      "f1": 0.7092823903992161,
+      "fpr": 0.4392912975508077,
+      "mcc": 0.37911871746539744,
+      "brier": 0.22667067529286777,
+      "ece": 0.16630185846405865,
+      "threshold": 0.3830183744430542,
+      "tp": 1448,
+      "fp": 843,
+      "tn": 1076,
+      "fn": 344
+    },
+    "fit_seconds": 2.2380037999973865,
+    "n_test": 3711,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "logistic_regression",
+      "familia": "linear",
+      "escala": true,
+      "params": {
+        "max_iter": 1000,
+        "C": 1.0,
+        "solver": "lbfgs",
+        "tol": 0.0001
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.732876,
+      "auroc_hi": 0.763235,
+      "auc_pr_lo": 0.677967,
+      "auc_pr_hi": 0.714244,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_iscx2016__logistic_regression.parquet",
+      "sha256": "a7dbe8a0fa425bf1e3cd5772965317f66993945b433deab7cd9b945ae3bb414f"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "random_forest",
+    "metrics": {
+      "auroc": 0.8591448357124247,
+      "auc_pr": 0.8598614895930323,
+      "precision": 0.6916050456720313,
+      "recall": 0.8872767857142857,
+      "f1": 0.7773160596431189,
+      "fpr": 0.36946326211568525,
+      "mcc": 0.5329580724530588,
+      "brier": 0.17477970179662128,
+      "ece": 0.11612256062292915,
+      "threshold": 0.46327771236290316,
+      "tp": 1590,
+      "fp": 709,
+      "tn": 1210,
+      "fn": 202
+    },
+    "fit_seconds": 110.16731830000208,
+    "n_test": 3711,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "random_forest",
+      "familia": "bagging",
+      "escala": false,
+      "params": {
+        "n_estimators": 300,
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "n_jobs": -1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.847619,
+      "auroc_hi": 0.869723,
+      "auc_pr_lo": 0.848658,
+      "auc_pr_hi": 0.870942,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_iscx2016__random_forest.parquet",
+      "sha256": "1607df3da53bbefb00384aab428af5c077af5187ab028985678fac5a6f078dea"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "xgboost",
+    "metrics": {
+      "auroc": 0.8672187604686221,
+      "auc_pr": 0.8576633606530983,
+      "precision": 0.73416551086454,
+      "recall": 0.8861607142857143,
+      "f1": 0.8030341340075853,
+      "fpr": 0.2996352266805628,
+      "mcc": 0.5944011505175644,
+      "brier": 0.1665276966742969,
+      "ece": 0.1058988564157996,
+      "threshold": 0.46448662877082825,
+      "tp": 1588,
+      "fp": 575,
+      "tn": 1344,
+      "fn": 204
+    },
+    "fit_seconds": 3.399040399999649,
+    "n_test": 3711,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "xgboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "max_depth": 8,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 1,
+        "reg_lambda": 1.0,
+        "tree_method": "hist",
+        "eval_metric": "logloss"
+      },
+      "seed": 42,
+      "device_params": {
+        "device": "cuda"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.855867,
+      "auroc_hi": 0.876789,
+      "auc_pr_lo": 0.845763,
+      "auc_pr_hi": 0.867936,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_iscx2016__xgboost.parquet",
+      "sha256": "754375e437390699670db301f64f67b10257f125ec3379aef0a8162e1e6d9083"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "lightgbm",
+    "metrics": {
+      "auroc": 0.8605442869239931,
+      "auc_pr": 0.8405401490115438,
+      "precision": 0.7118270079435128,
+      "recall": 0.9001116071428571,
+      "f1": 0.7949728930507639,
+      "fpr": 0.3402813965607087,
+      "mcc": 0.5737186194277812,
+      "brier": 0.1677713198611019,
+      "ece": 0.10904984056217365,
+      "threshold": 0.4187344575318358,
+      "tp": 1613,
+      "fp": 653,
+      "tn": 1266,
+      "fn": 179
+    },
+    "fit_seconds": 5.16679689999728,
+    "n_test": 3711,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "lightgbm",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "num_leaves": 63,
+        "max_depth": -1,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "subsample_freq": 1,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 20,
+        "reg_lambda": 1.0,
+        "verbose": -1,
+        "deterministic": true,
+        "force_row_wise": true
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.84901,
+      "auroc_hi": 0.870706,
+      "auc_pr_lo": 0.827265,
+      "auc_pr_hi": 0.852387,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_iscx2016__lightgbm.parquet",
+      "sha256": "b76bbedda6b1aaceff1f70c29bc5ac3fc4d2ed702121bdaf118dc6982573db70"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "catboost",
+    "metrics": {
+      "auroc": 0.8495978885952504,
+      "auc_pr": 0.8322730262039346,
+      "precision": 0.6997366110623354,
+      "recall": 0.8895089285714286,
+      "f1": 0.7832923832923835,
+      "fpr": 0.3564356435643564,
+      "mcc": 0.5471336847917664,
+      "brier": 0.17643866874564035,
+      "ece": 0.11527791559480857,
+      "threshold": 0.42271816489628233,
+      "tp": 1594,
+      "fp": 684,
+      "tn": 1235,
+      "fn": 198
+    },
+    "fit_seconds": 5.610592999997607,
+    "n_test": 3711,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "catboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "iterations": 400,
+        "depth": 8,
+        "learning_rate": 0.1,
+        "l2_leaf_reg": 3.0,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "seed": 42,
+      "device_params": {
+        "task_type": "GPU",
+        "devices": "0"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.837316,
+      "auroc_hi": 0.859897,
+      "auc_pr_lo": 0.81872,
+      "auc_pr_hi": 0.844087,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_iscx2016__catboost.parquet",
+      "sha256": "2c7a3666bac513403838a2b319e5bfe41cd1efab29c41f653bd357399b1cdf5c"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_iscx2016",
+    "test_corpus": "iscx2016",
+    "model": "mlp",
+    "metrics": {
+      "auroc": 0.8741808303245738,
+      "auc_pr": 0.8528450612893999,
+      "precision": 0.7522543901281443,
+      "recall": 0.8844866071428571,
+      "f1": 0.8130289817902026,
+      "fpr": 0.2720166753517457,
+      "mcc": 0.617812673328323,
+      "brier": 0.15777618873681068,
+      "ece": 0.10801291711593261,
+      "threshold": 0.44349685311317444,
+      "tp": 1585,
+      "fp": 522,
+      "tn": 1397,
+      "fn": 207
+    },
+    "fit_seconds": 249.62341390000074,
+    "n_test": 3711,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": "linha",
+      "model": "mlp",
+      "familia": "rede_neural",
+      "escala": true,
+      "params": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "activation": "relu",
+        "solver": "adam",
+        "alpha": 0.0001,
+        "learning_rate_init": 0.001,
+        "max_iter": 200,
+        "early_stopping": true,
+        "n_iter_no_change": 10,
+        "validation_fraction": 0.1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.863247,
+      "auroc_hi": 0.883858,
+      "auc_pr_lo": 0.840592,
+      "auc_pr_hi": 0.864783,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_iscx2016__mlp.parquet",
+      "sha256": "faf8734a7d225850cc6aa98cf918f293ff66b2b344e4e8ad631970513711752e"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "logistic_regression",
+    "metrics": {
+      "auroc": 0.9082582195525688,
+      "auc_pr": 0.7669364266030658,
+      "precision": 0.668635447428866,
+      "recall": 0.711918546616091,
+      "f1": 0.689598491624163,
+      "fpr": 0.10183677879420874,
+      "mcc": 0.5968474065454042,
+      "brier": 0.09823335717404956,
+      "ece": 0.03708322428701042,
+      "threshold": 0.41443169116973877,
+      "tp": 14264,
+      "fp": 7069,
+      "tn": 62346,
+      "fn": 5772
+    },
+    "fit_seconds": 1.8284729000006337,
+    "n_test": 89451,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "logistic_regression",
+      "familia": "linear",
+      "escala": true,
+      "params": {
+        "max_iter": 1000,
+        "C": 1.0,
+        "solver": "lbfgs",
+        "tol": 0.0001
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.906159,
+      "auroc_hi": 0.910188,
+      "auc_pr_lo": 0.762426,
+      "auc_pr_hi": 0.771955,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_kaggle03__logistic_regression.parquet",
+      "sha256": "03f8e4e3f334c2116f926a76ce8826225672dde1703158314f2bb096476d2524"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "random_forest",
+    "metrics": {
+      "auroc": 0.9170160041249384,
+      "auc_pr": 0.8153727541519242,
+      "precision": 0.7005636771916961,
+      "recall": 0.7629766420443203,
+      "f1": 0.7304393530353347,
+      "fpr": 0.09412951091262696,
+      "mcc": 0.6493099017225608,
+      "brier": 0.09045259785699279,
+      "ece": 0.0578293835769528,
+      "threshold": 0.47891419448849964,
+      "tp": 15287,
+      "fp": 6534,
+      "tn": 62881,
+      "fn": 4749
+    },
+    "fit_seconds": 55.81954229999974,
+    "n_test": 89451,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "random_forest",
+      "familia": "bagging",
+      "escala": false,
+      "params": {
+        "n_estimators": 300,
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "n_jobs": -1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.91484,
+      "auroc_hi": 0.919025,
+      "auc_pr_lo": 0.811421,
+      "auc_pr_hi": 0.819676,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_kaggle03__random_forest.parquet",
+      "sha256": "c7b81acd5d3b7f6c2200eccfcc4b5d1a1e8109d01b2e1dd99e53a6f2f5b2ab92"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "xgboost",
+    "metrics": {
+      "auroc": 0.9217514837191347,
+      "auc_pr": 0.8139319529038221,
+      "precision": 0.7075095270118807,
+      "recall": 0.7876322619285286,
+      "f1": 0.7454240570605324,
+      "fpr": 0.09398544983072823,
+      "mcc": 0.6684353099159962,
+      "brier": 0.08702343421603469,
+      "ece": 0.03698903177270923,
+      "threshold": 0.42953187227249146,
+      "tp": 15781,
+      "fp": 6524,
+      "tn": 62891,
+      "fn": 4255
+    },
+    "fit_seconds": 2.813313599996036,
+    "n_test": 89451,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "xgboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "max_depth": 8,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 1,
+        "reg_lambda": 1.0,
+        "tree_method": "hist",
+        "eval_metric": "logloss"
+      },
+      "seed": 42,
+      "device_params": {
+        "device": "cuda"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.91964,
+      "auroc_hi": 0.923775,
+      "auc_pr_lo": 0.809905,
+      "auc_pr_hi": 0.818375,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_kaggle03__xgboost.parquet",
+      "sha256": "10077c271892345b7088382c37aa5866f252032c2b39424b7fef636d330aee40"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "lightgbm",
+    "metrics": {
+      "auroc": 0.9221707524453534,
+      "auc_pr": 0.8065842374464843,
+      "precision": 0.7070231333979775,
+      "recall": 0.7642243960870433,
+      "f1": 0.7345117885496366,
+      "fpr": 0.09140675646474106,
+      "mcc": 0.6548393470630294,
+      "brier": 0.09027445717768004,
+      "ece": 0.041925890615681624,
+      "threshold": 0.47856085779232355,
+      "tp": 15312,
+      "fp": 6345,
+      "tn": 63070,
+      "fn": 4724
+    },
+    "fit_seconds": 4.162660200003302,
+    "n_test": 89451,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "lightgbm",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "num_leaves": 63,
+        "max_depth": -1,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "subsample_freq": 1,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 20,
+        "reg_lambda": 1.0,
+        "verbose": -1,
+        "deterministic": true,
+        "force_row_wise": true
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.920197,
+      "auroc_hi": 0.924056,
+      "auc_pr_lo": 0.802442,
+      "auc_pr_hi": 0.811083,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_kaggle03__lightgbm.parquet",
+      "sha256": "f1dcf6b8a66afd798d5367225ab923c14ae899ef2d61cb309fc29ae489c973d5"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "catboost",
+    "metrics": {
+      "auroc": 0.9235718234010157,
+      "auc_pr": 0.8106449993018701,
+      "precision": 0.7066007959379718,
+      "recall": 0.770962267917748,
+      "f1": 0.7373797646609543,
+      "fpr": 0.09240077792984225,
+      "mcc": 0.6583322777771273,
+      "brier": 0.0879081817570533,
+      "ece": 0.042080573306862865,
+      "threshold": 0.46184073744529597,
+      "tp": 15447,
+      "fp": 6414,
+      "tn": 63001,
+      "fn": 4589
+    },
+    "fit_seconds": 4.978522199999134,
+    "n_test": 89451,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "catboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "iterations": 400,
+        "depth": 8,
+        "learning_rate": 0.1,
+        "l2_leaf_reg": 3.0,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "seed": 42,
+      "device_params": {
+        "task_type": "GPU",
+        "devices": "0"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.921576,
+      "auroc_hi": 0.9255,
+      "auc_pr_lo": 0.806507,
+      "auc_pr_hi": 0.815312,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_kaggle03__catboost.parquet",
+      "sha256": "b594f18f9d36aab71300cf4563fee1a3ba31b4da3de69edaee02fe61117f2e7d"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_kaggle03",
+    "test_corpus": "kaggle03",
+    "model": "mlp",
+    "metrics": {
+      "auroc": 0.9234825207732758,
+      "auc_pr": 0.7874652960694075,
+      "precision": 0.6935433907155817,
+      "recall": 0.7821920543022559,
+      "f1": 0.7352051227922033,
+      "fpr": 0.09976229921486711,
+      "mcc": 0.6547884930715825,
+      "brier": 0.09312368381897268,
+      "ece": 0.04013110564139938,
+      "threshold": 0.44705966114997864,
+      "tp": 15672,
+      "fp": 6925,
+      "tn": 62490,
+      "fn": 4364
+    },
+    "fit_seconds": 157.84557140000106,
+    "n_test": 89451,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": "linha",
+      "model": "mlp",
+      "familia": "rede_neural",
+      "escala": true,
+      "params": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "activation": "relu",
+        "solver": "adam",
+        "alpha": 0.0001,
+        "learning_rate_init": 0.001,
+        "max_iter": 200,
+        "early_stopping": true,
+        "n_iter_no_change": 10,
+        "validation_fraction": 0.1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.921586,
+      "auroc_hi": 0.925333,
+      "auc_pr_lo": 0.782988,
+      "auc_pr_hi": 0.792367,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_kaggle03__mlp.parquet",
+      "sha256": "746272f44afd5295c9d5c9cc0d24a70d4fba8c1e3e635e2bede529d1fc647961"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "logistic_regression",
+    "metrics": {
+      "auroc": 0.8708493467553282,
+      "auc_pr": 0.878421525442147,
+      "precision": 0.7519975725700415,
+      "recall": 0.819374035706414,
+      "f1": 0.7842413374822004,
+      "fpr": 0.2567808147449995,
+      "mcc": 0.5634874516525794,
+      "brier": 0.14702844543449706,
+      "ece": 0.049566286482133126,
+      "threshold": 0.4153078496456146,
+      "tp": 7435,
+      "fp": 2452,
+      "tn": 7097,
+      "fn": 1639
+    },
+    "fit_seconds": 2.572939400000905,
+    "n_test": 18623,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "logistic_regression",
+      "familia": "linear",
+      "escala": true,
+      "params": {
+        "max_iter": 1000,
+        "C": 1.0,
+        "solver": "lbfgs",
+        "tol": 0.0001
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.866072,
+      "auroc_hi": 0.876092,
+      "auc_pr_lo": 0.873844,
+      "auc_pr_hi": 0.883603,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_phishstorm__logistic_regression.parquet",
+      "sha256": "91edc77860a4715341b2ecc58aa2150120c3d71b7295297ac05688f3d5e08d38"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "random_forest",
+    "metrics": {
+      "auroc": 0.9293651738363841,
+      "auc_pr": 0.9365469518616131,
+      "precision": 0.8071762250273332,
+      "recall": 0.894974652854309,
+      "f1": 0.848811079174288,
+      "fpr": 0.20316263483087235,
+      "mcc": 0.6938382693371267,
+      "brier": 0.10830235819644794,
+      "ece": 0.059411754647619885,
+      "threshold": 0.45663872750411505,
+      "tp": 8121,
+      "fp": 1940,
+      "tn": 7609,
+      "fn": 953
+    },
+    "fit_seconds": 104.42379609999625,
+    "n_test": 18623,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "random_forest",
+      "familia": "bagging",
+      "escala": false,
+      "params": {
+        "n_estimators": 300,
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "n_jobs": -1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.925693,
+      "auroc_hi": 0.93312,
+      "auc_pr_lo": 0.93326,
+      "auc_pr_hi": 0.940008,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_phishstorm__random_forest.parquet",
+      "sha256": "d41fcd5a420911cf8e005de299f997b19dd563d6a9eb8561ac82e0b0b0d5bf30"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "xgboost",
+    "metrics": {
+      "auroc": 0.9321380599625431,
+      "auc_pr": 0.9387161462929371,
+      "precision": 0.8270466321243524,
+      "recall": 0.8795459554771876,
+      "f1": 0.8524887844477677,
+      "fpr": 0.17478269975913707,
+      "mcc": 0.7049999671353137,
+      "brier": 0.10643687610614168,
+      "ece": 0.055305223153628125,
+      "threshold": 0.4715022146701813,
+      "tp": 7981,
+      "fp": 1669,
+      "tn": 7880,
+      "fn": 1093
+    },
+    "fit_seconds": 3.4146676999953343,
+    "n_test": 18623,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "xgboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "max_depth": 8,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 1,
+        "reg_lambda": 1.0,
+        "tree_method": "hist",
+        "eval_metric": "logloss"
+      },
+      "seed": 42,
+      "device_params": {
+        "device": "cuda"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.92873,
+      "auroc_hi": 0.935673,
+      "auc_pr_lo": 0.935665,
+      "auc_pr_hi": 0.942083,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_phishstorm__xgboost.parquet",
+      "sha256": "cded27c5f47c5c0fe07184517de4c7d864ff184c76da5daeab7f1744df590c87"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "lightgbm",
+    "metrics": {
+      "auroc": 0.9304996538508741,
+      "auc_pr": 0.9372954504380863,
+      "precision": 0.821778098279592,
+      "recall": 0.879105135552127,
+      "f1": 0.8494755337841435,
+      "fpr": 0.18117080322546864,
+      "mcc": 0.6983374806532455,
+      "brier": 0.10795718683416272,
+      "ece": 0.0555728361827253,
+      "threshold": 0.4638396783087384,
+      "tp": 7977,
+      "fp": 1730,
+      "tn": 7819,
+      "fn": 1097
+    },
+    "fit_seconds": 6.015187600001809,
+    "n_test": 18623,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "lightgbm",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "n_estimators": 400,
+        "num_leaves": 63,
+        "max_depth": -1,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "subsample_freq": 1,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 20,
+        "reg_lambda": 1.0,
+        "verbose": -1,
+        "deterministic": true,
+        "force_row_wise": true
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.927036,
+      "auroc_hi": 0.934066,
+      "auc_pr_lo": 0.934168,
+      "auc_pr_hi": 0.940715,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_phishstorm__lightgbm.parquet",
+      "sha256": "1bfb309a3429c746c8c094fce6ed0305918f9e726f330c6a886926fc9eb3e66a"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "catboost",
+    "metrics": {
+      "auroc": 0.9281201714632089,
+      "auc_pr": 0.9351401245413746,
+      "precision": 0.8261596322607605,
+      "recall": 0.8715009918448314,
+      "f1": 0.8482248203368014,
+      "fpr": 0.17425908472091317,
+      "mcc": 0.6972879960996716,
+      "brier": 0.10939419378796669,
+      "ece": 0.05746954641724734,
+      "threshold": 0.48209824607481366,
+      "tp": 7908,
+      "fp": 1664,
+      "tn": 7885,
+      "fn": 1166
+    },
+    "fit_seconds": 5.550917699998536,
+    "n_test": 18623,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": null,
+      "model": "catboost",
+      "familia": "boosting",
+      "escala": false,
+      "params": {
+        "iterations": 400,
+        "depth": 8,
+        "learning_rate": 0.1,
+        "l2_leaf_reg": 3.0,
+        "verbose": false,
+        "allow_writing_files": false
+      },
+      "seed": 42,
+      "device_params": {
+        "task_type": "GPU",
+        "devices": "0"
+      },
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.924566,
+      "auroc_hi": 0.931817,
+      "auc_pr_lo": 0.931893,
+      "auc_pr_hi": 0.938717,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_phishstorm__catboost.parquet",
+      "sha256": "127494598cf4c5b7d08fac4cee349b5d36e38496a47c3599d767f04f8857065f"
+    }
+  },
+  {
+    "run_id": "15a70f0-20261109T172005Z",
+    "regime": "oficial",
+    "train_corpus": "uniao_sem_phishstorm",
+    "test_corpus": "phishstorm",
+    "model": "mlp",
+    "metrics": {
+      "auroc": 0.9196783244817348,
+      "auc_pr": 0.9279851153696936,
+      "precision": 0.7684190512406123,
+      "recall": 0.8907868635662332,
+      "f1": 0.8250905935793396,
+      "fpr": 0.255105246622683,
+      "mcc": 0.6408863809876099,
+      "brier": 0.12136917009699644,
+      "ece": 0.06968443247883976,
+      "threshold": 0.42187702655792236,
+      "tp": 8083,
+      "fp": 2436,
+      "tn": 7113,
+      "fn": 991
+    },
+    "fit_seconds": 156.18031869999686,
+    "n_test": 18623,
+    "diagonal": false,
+    "warnings": [],
+    "config_fingerprint": "f3c8cc7a683a00bf",
+    "provenance": {
+      "validacao_interna": "linha",
+      "model": "mlp",
+      "familia": "rede_neural",
+      "escala": true,
+      "params": {
+        "hidden_layer_sizes": [
+          128,
+          64
+        ],
+        "activation": "relu",
+        "solver": "adam",
+        "alpha": 0.0001,
+        "learning_rate_init": 0.001,
+        "max_iter": 200,
+        "early_stopping": true,
+        "n_iter_no_change": 10,
+        "validation_fraction": 0.1
+      },
+      "seed": 42,
+      "device_params": {},
+      "gpu_detected": true,
+      "gpu_describe": "GPU x1 via nvidia-smi: NVIDIA GeForce RTX 5060",
+      "smoke": false
+    },
+    "ci": {
+      "auroc_lo": 0.915886,
+      "auroc_hi": 0.923613,
+      "auc_pr_lo": 0.924502,
+      "auc_pr_hi": 0.931639,
+      "n_resamples": 500,
+      "nivel": 0.95
+    },
+    "predicoes": {
+      "arquivo": "predicoes/loco/oficial__uniao_sem_phishstorm__mlp.parquet",
+      "sha256": "7c4adf46968cf789c2821a3c06d4fe802c08b2ab7f96de00328a7f0ca3859dd0"
+    }
+  }
+]

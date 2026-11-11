@@ -1,0 +1,79 @@
+# requirements.lock — pins exatos, gerados por `pip freeze`.
+#
+# Python exigido: 3.14.x (testado em 3.14.3)
+# Gerado em: 2026-08-04
+# Plataforma de geracao: Windows-11-10.0.26200-SP0 (win_amd64)
+# Commit: 1e564be
+#
+# Decisao (ver SDD.md secao 11): Python 3.14.3 foi testado primeiro por ser a
+# unica versao ja instalada nesta maquina. Ao contrario do esperado (risco
+# RK2 da SDD), TODAS as dependencias do projeto -- incluindo catboost, que
+# historicamente demora a lancar wheels para versoes novas de Python --
+# publicaram wheels cp314 e foram validadas com
+# `python scripts/verify_environment.py` (19/19 checagens OK, incluindo os
+# 6 modelos do artigo: LogisticRegression, RandomForestClassifier,
+# MLPClassifier, XGBClassifier, LGBMClassifier, CatBoostClassifier).
+# NAO foi necessario instalar Python 3.12.
+#
+# Reproduzir este ambiente (ex.: maquina do Lucas):
+#   py -3.14 -m venv venv
+#   venv\Scripts\pip install -r requirements.lock
+#   venv\Scripts\python scripts\verify_environment.py
+#
+# Este arquivo é o pin de instalação (`pip install -r requirements.lock`).
+# Para a lista legível com faixas de versão, ver requirements.txt.
+
+alembic==1.19.0
+catboost==1.2.10
+certifi==2026.7.22
+charset-normalizer==3.4.9
+colorama==0.4.6
+colorlog==6.12.0
+contourpy==1.3.3
+cycler==0.12.1
+filelock==3.32.2
+fonttools==4.63.0
+graphviz==0.21
+greenlet==3.5.4
+idna==3.18
+iniconfig==2.3.0
+joblib==1.5.3
+kiwisolver==1.5.0
+lightgbm==4.7.0
+Mako==1.4.0
+MarkupSafe==3.0.3
+matplotlib==3.11.1
+narwhals==2.24.0
+numpy==2.5.1
+optuna==4.9.0
+packaging==26.3
+pandas==3.0.5
+pillow==12.3.0
+plotly==6.9.0
+pluggy==1.6.0
+pyarrow==25.0.0
+Pygments==2.20.0
+pyparsing==3.3.2
+pytest==9.1.1
+python-dateutil==2.9.0.post0
+PyYAML==6.0.3
+requests==2.34.2
+requests-file==3.0.1
+ruff==0.16.1
+scikit-learn==1.9.0
+scipy==1.18.0
+# Acrescentado em 06/08/2026 para as figuras F1 e F2 (T5.2). NAO participa de
+# calculo nenhum: e biblioteca de desenho, nao entra em config_fingerprint nem
+# em contrato_features_fingerprint, e nenhum resultado depende dela. Quem gera
+# figura e o Julio, a partir de results/; o Lucas nunca gera. Nao trouxe
+# dependencia transitiva nova -- numpy, pandas e matplotlib ja estavam aqui.
+seaborn==0.13.2
+six==1.17.0
+SQLAlchemy==2.0.51
+threadpoolctl==3.6.0
+tldextract==5.3.1
+tqdm==4.70.0
+typing_extensions==4.16.0
+tzdata==2026.3
+urllib3==2.7.0
+xgboost==3.4.0

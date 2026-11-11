@@ -1,0 +1,1510 @@
+{
+  "run_id": "c8c5363-20261110T182902Z",
+  "gerado_em": "2026-11-10T18:29:02Z",
+  "parcial": false,
+  "config_fingerprint": "3e7a7bdf78b748c8",
+  "parametros": {
+    "seed": 42,
+    "test_size": 0.2,
+    "val_size": 0.1,
+    "val_size_oficial": 0.1,
+    "limiar_vies_p": 20.0,
+    "corpora_matriz": [
+      "grambeddings",
+      "kaggle03",
+      "phishstorm",
+      "iscx2016"
+    ]
+  },
+  "definicoes": {
+    "gap": "Diferença absoluta, em pontos percentuais, entre a fração de URLs phishing e a fração de URLs benignas que exibem um atributo estrutural. Medido sobre o split de treino distribuído pela fonte. Gap alto significa que o atributo identifica a origem do arquivo, não a classe.",
+    "scheme": "A URL começa com 'http://', 'https://' ou 'ftp://'. Teste de prefixo, não de substring (evitar o bug B14).",
+    "path": "Depois do host existe uma '/' e ao menos um caractere após ela. Barra final solta não conta como path.",
+    "veredito": "'contaminado' quando max(gap_scheme, gap_path) >= 20.0 pontos percentuais; 'limpo' caso contrário. A distribuição medida é bimodal e qualquer limiar entre ~7 e ~59 p produz a mesma partição.",
+    "dominio": "eTLD+1 obtido por data.url_canonicalization.canonicalize_url, pela lista de sufixos públicos versionada em config/psl, com a seção de domínios privados (PSL-01 a PSL-03). É a MESMA chave que splits.py usa para agrupar no Regime B: a Tabela 1 e o split contam 'domínio' do mesmo jeito. Linhas sem eTLD+1 extraível não entram nas contagens de domínio.",
+    "psl_privada_contra_icann": "Por dataset: URLs cujo eTLD+1 muda entre a PSL com a seção de domínios privados e só com a seção ICANN, grupos ICANN afetados e grupos resultantes (REEX-13).",
+    "dominios_duas_classes": "Por dataset: eTLD+1 com URLs das duas classes, no dataset bruto e no deduplicado do Regime B (REEX-08).",
+    "desvio_prevalencia": "Por regime, dataset e partição: prevalência de phishing menos a do dataset deduplicado, em fração (REEX-08).",
+    "esquema_por_classe": "Por dataset e classe: fração de URLs com esquema explícito, com http, com https e sem esquema (ANL-05).",
+    "medias_por_classe": "Por dataset e classe: média de cada uma das 41 características, com o esquema mantido (ANL-05).",
+    "contaminacao_dominios_pct": "Dos domínios eTLD+1 distintos do teste oficial, percentual que também aparece no treino oficial.",
+    "contaminacao_linhas_pct": "Das linhas de teste com domínio válido, percentual que pertence a um domínio presente no treino oficial.",
+    "exemplo": "Par treino/teste concreto do domínio sobreposto com mais linhas de teste, para citação na prosa do artigo. As duas URLs são DISTINTAS por construção: um par cujas URLs coincidissem ilustraria duplicação exata de URL, que é defeito diferente e mais forte do que o vazamento de domínio medido aqui. Determinístico (domínio com mais linhas de teste, desempate pelo nome; de cada lado a URL mais curta, desempate lexicográfico). Nulo se o domínio não admitir par distinto.",
+    "sobreposicao_entre_corpora": "Por célula (treino=A, teste=B): percentual dos domínios do teste de B que também aparecem no treino de A, nas MESMAS partições que a matriz cruzada do artigo usa. Medido e declarado, nunca filtrado (SDD §4 D3, §11). A diagonal do regime 'etld1' é 0,0% por construção; a do regime 'oficial' não repete a Tabela 1 porque ali a validação já foi recortada do treino.",
+    "sobreposicao_loco": "Por corpus retido: percentual dos domínios do teste dele que também aparecem na UNIÃO dos treinos dos outros três — que é o que o leave-one-corpus-out (SDD §4 D3-b) de fato treina, nas mesmas partições da matriz. Não se recupera da matriz par a par: somar as três superestima (os conjuntos de domínio se intersectam) e pegar a maior subestima. Não há diagonal nem valor esperado de zero aqui: o corpus retido não entra no próprio treino, mas os outros três compartilham domínio com ele à vontade. Medido e declarado, nunca filtrado (SDD §4 D3)."
+  },
+  "vies_construcao": {
+    "phishstorm": {
+      "n_treino": 76814,
+      "n_teste": 19204,
+      "n_total": 96018,
+      "balanco": {
+        "benigno": 48009,
+        "phishing": 48009,
+        "benigno_pct": 50.0,
+        "phishing_pct": 50.0
+      },
+      "scheme": {
+        "benigno_pct": 100.0,
+        "phishing_pct": 99.98,
+        "gap_p": 0.02,
+        "gap_corpus_inteiro_p": 0.02
+      },
+      "path": {
+        "benigno_pct": 100.0,
+        "phishing_pct": 99.99,
+        "gap_p": 0.01,
+        "gap_corpus_inteiro_p": 0.01
+      },
+      "gap_max_p": 0.02,
+      "veredito": "limpo"
+    },
+    "iscx2016": {
+      "n_treino": 15972,
+      "n_teste": 3993,
+      "n_total": 19965,
+      "balanco": {
+        "benigno": 10000,
+        "phishing": 9965,
+        "benigno_pct": 50.09,
+        "phishing_pct": 49.91
+      },
+      "scheme": {
+        "benigno_pct": 100.0,
+        "phishing_pct": 99.8,
+        "gap_p": 0.2,
+        "gap_corpus_inteiro_p": 0.18
+      },
+      "path": {
+        "benigno_pct": 100.0,
+        "phishing_pct": 96.62,
+        "gap_p": 3.38,
+        "gap_corpus_inteiro_p": 3.34
+      },
+      "gap_max_p": 3.38,
+      "veredito": "limpo"
+    },
+    "grambeddings": {
+      "n_treino": 640000,
+      "n_teste": 160000,
+      "n_total": 800000,
+      "balanco": {
+        "benigno": 400000,
+        "phishing": 400000,
+        "benigno_pct": 50.0,
+        "phishing_pct": 50.0
+      },
+      "scheme": {
+        "benigno_pct": 99.93,
+        "phishing_pct": 100.0,
+        "gap_p": 0.07,
+        "gap_corpus_inteiro_p": 0.08
+      },
+      "path": {
+        "benigno_pct": 84.61,
+        "phishing_pct": 88.1,
+        "gap_p": 3.49,
+        "gap_corpus_inteiro_p": 3.43
+      },
+      "gap_max_p": 3.49,
+      "veredito": "limpo"
+    },
+    "kaggle03": {
+      "n_treino": 360140,
+      "n_teste": 90036,
+      "n_total": 450176,
+      "balanco": {
+        "benigno": 345738,
+        "phishing": 104438,
+        "benigno_pct": 76.8,
+        "phishing_pct": 23.2
+      },
+      "scheme": {
+        "benigno_pct": 99.99,
+        "phishing_pct": 99.59,
+        "gap_p": 0.4,
+        "gap_corpus_inteiro_p": 0.39
+      },
+      "path": {
+        "benigno_pct": 86.19,
+        "phishing_pct": 92.34,
+        "gap_p": 6.15,
+        "gap_corpus_inteiro_p": 6.19
+      },
+      "gap_max_p": 6.15,
+      "veredito": "limpo"
+    },
+    "sid321axn": {
+      "n_treino": 520927,
+      "n_teste": 130231,
+      "n_total": 651158,
+      "balanco": {
+        "benigno": 428101,
+        "phishing": 223057,
+        "benigno_pct": 65.74,
+        "phishing_pct": 34.26
+      },
+      "scheme": {
+        "benigno_pct": 8.3,
+        "phishing_pct": 68.23,
+        "gap_p": 59.93,
+        "gap_corpus_inteiro_p": 59.92
+      },
+      "path": {
+        "benigno_pct": 88.86,
+        "phishing_pct": 89.0,
+        "gap_p": 0.14,
+        "gap_corpus_inteiro_p": 0.12
+      },
+      "gap_max_p": 59.93,
+      "veredito": "contaminado"
+    },
+    "pdrcnn": {
+      "n_treino": 430519,
+      "n_teste": 107630,
+      "n_total": 538149,
+      "balanco": {
+        "benigno": 522396,
+        "phishing": 15753,
+        "benigno_pct": 97.07,
+        "phishing_pct": 2.93
+      },
+      "scheme": {
+        "benigno_pct": 0.0,
+        "phishing_pct": 94.9,
+        "gap_p": 94.9,
+        "gap_corpus_inteiro_p": 95.03
+      },
+      "path": {
+        "benigno_pct": 0.0,
+        "phishing_pct": 84.76,
+        "gap_p": 84.76,
+        "gap_corpus_inteiro_p": 84.34
+      },
+      "gap_max_p": 94.9,
+      "veredito": "contaminado"
+    }
+  },
+  "vazamento_split_oficial": {
+    "iscx2016": {
+      "dominios_treino": 2972,
+      "dominios_teste": 1299,
+      "dominios_sobrepostos": 1016,
+      "urls_identicas_treino_teste": 1386,
+      "contaminacao_dominios_pct": 78.21,
+      "linhas_teste_com_dominio_valido": 3993,
+      "linhas_teste_contaminadas": 3676,
+      "contaminacao_linhas_pct": 92.06,
+      "linhas_sem_etld1": {
+        "treino": 0,
+        "teste": 0
+      },
+      "exemplo": {
+        "dominio": "pastehtml.com",
+        "url_treino": "http://pastehtml.com/view/1dpt0t8.html",
+        "url_teste": "http://pastehtml.com/view/au6g36wgl.html",
+        "label_treino": 1,
+        "label_teste": 1,
+        "linhas_treino": 759,
+        "linhas_teste": 207
+      }
+    },
+    "phishstorm": {
+      "dominios_treino": 26874,
+      "dominios_teste": 9993,
+      "dominios_sobrepostos": 5827,
+      "urls_identicas_treino_teste": 0,
+      "contaminacao_dominios_pct": 58.31,
+      "linhas_teste_com_dominio_valido": 19201,
+      "linhas_teste_contaminadas": 14808,
+      "contaminacao_linhas_pct": 77.12,
+      "linhas_sem_etld1": {
+        "treino": 6,
+        "teste": 3
+      },
+      "exemplo": {
+        "dominio": "wikipedia.org",
+        "url_treino": "http://mr.wikipedia.org/wiki/",
+        "url_teste": "http://fr.wikipedia.org/wiki/P2P",
+        "label_treino": 0,
+        "label_teste": 0,
+        "linhas_treino": 1488,
+        "linhas_teste": 376
+      }
+    },
+    "kaggle03": {
+      "dominios_treino": 119499,
+      "dominios_teste": 40431,
+      "dominios_sobrepostos": 19377,
+      "urls_identicas_treino_teste": 0,
+      "contaminacao_dominios_pct": 47.93,
+      "linhas_teste_com_dominio_valido": 89989,
+      "linhas_teste_contaminadas": 68039,
+      "contaminacao_linhas_pct": 75.61,
+      "linhas_sem_etld1": {
+        "treino": 160,
+        "teste": 47
+      },
+      "exemplo": {
+        "dominio": "wikipedia.org",
+        "url_treino": "https://www.wikipedia.org",
+        "url_teste": "https://en.wikipedia.org/wiki/Energy",
+        "label_treino": 0,
+        "label_teste": 0,
+        "linhas_treino": 10245,
+        "linhas_teste": 2650
+      }
+    },
+    "sid321axn": {
+      "dominios_treino": 137643,
+      "dominios_teste": 47216,
+      "dominios_sobrepostos": 22032,
+      "urls_identicas_treino_teste": 1158,
+      "contaminacao_dominios_pct": 46.66,
+      "linhas_teste_com_dominio_valido": 130221,
+      "linhas_teste_contaminadas": 104069,
+      "contaminacao_linhas_pct": 79.92,
+      "linhas_sem_etld1": {
+        "treino": 51,
+        "teste": 10
+      },
+      "exemplo": {
+        "dominio": "wikipedia.org",
+        "url_treino": "en.wikipedia.org/wiki/Hy",
+        "url_teste": "en.wikipedia.org/wiki/Bus",
+        "label_treino": 0,
+        "label_teste": 0,
+        "linhas_treino": 10748,
+        "linhas_teste": 2678
+      }
+    },
+    "grambeddings": {
+      "dominios_treino": 355479,
+      "dominios_teste": 113462,
+      "dominios_sobrepostos": 51154,
+      "urls_identicas_treino_teste": 2,
+      "contaminacao_dominios_pct": 45.08,
+      "linhas_teste_com_dominio_valido": 159972,
+      "linhas_teste_contaminadas": 93845,
+      "contaminacao_linhas_pct": 58.66,
+      "linhas_sem_etld1": {
+        "treino": 107,
+        "teste": 28
+      },
+      "exemplo": {
+        "dominio": "000webhostapp.com",
+        "url_treino": "http://75ki.000webhostapp.com/",
+        "url_teste": "http://xebal.000webhostapp.com/",
+        "label_treino": 1,
+        "label_teste": 1,
+        "linhas_treino": 15501,
+        "linhas_teste": 3854
+      }
+    },
+    "pdrcnn": {
+      "dominios_treino": 415882,
+      "dominios_teste": 104668,
+      "dominios_sobrepostos": 1275,
+      "urls_identicas_treino_teste": 30,
+      "contaminacao_dominios_pct": 1.22,
+      "linhas_teste_com_dominio_valido": 107493,
+      "linhas_teste_contaminadas": 4023,
+      "contaminacao_linhas_pct": 3.74,
+      "linhas_sem_etld1": {
+        "treino": 627,
+        "teste": 137
+      },
+      "exemplo": {
+        "dominio": "wordpress.com",
+        "url_treino": "en.wordpress.com",
+        "url_teste": "wordpress.com",
+        "label_treino": 0,
+        "label_teste": 0,
+        "linhas_treino": 1817,
+        "linhas_teste": 479
+      }
+    }
+  },
+  "sobreposicao_entre_corpora": {
+    "oficial": {
+      "matriz": {
+        "grambeddings": {
+          "grambeddings": {
+            "test_domains": 113490,
+            "shared_domains": 48084,
+            "shared_domain_pct": 42.37,
+            "test_rows": 159298,
+            "rows_with_shared_domain_pct": 56.49,
+            "diagonal": true
+          },
+          "kaggle03": {
+            "test_domains": 40478,
+            "shared_domains": 2761,
+            "shared_domain_pct": 6.82,
+            "test_rows": 89451,
+            "rows_with_shared_domain_pct": 26.06,
+            "diagonal": false
+          },
+          "phishstorm": {
+            "test_domains": 9996,
+            "shared_domains": 1007,
+            "shared_domain_pct": 10.07,
+            "test_rows": 18623,
+            "rows_with_shared_domain_pct": 19.56,
+            "diagonal": false
+          },
+          "iscx2016": {
+            "test_domains": 1299,
+            "shared_domains": 93,
+            "shared_domain_pct": 7.16,
+            "test_rows": 3711,
+            "rows_with_shared_domain_pct": 18.76,
+            "diagonal": false
+          }
+        },
+        "kaggle03": {
+          "grambeddings": {
+            "test_domains": 113490,
+            "shared_domains": 2448,
+            "shared_domain_pct": 2.16,
+            "test_rows": 159298,
+            "rows_with_shared_domain_pct": 9.38,
+            "diagonal": false
+          },
+          "kaggle03": {
+            "test_domains": 40478,
+            "shared_domains": 18647,
+            "shared_domain_pct": 46.07,
+            "test_rows": 89451,
+            "rows_with_shared_domain_pct": 74.63,
+            "diagonal": true
+          },
+          "phishstorm": {
+            "test_domains": 9996,
+            "shared_domains": 3468,
+            "shared_domain_pct": 34.69,
+            "test_rows": 18623,
+            "rows_with_shared_domain_pct": 50.49,
+            "diagonal": false
+          },
+          "iscx2016": {
+            "test_domains": 1299,
+            "shared_domains": 185,
+            "shared_domain_pct": 14.24,
+            "test_rows": 3711,
+            "rows_with_shared_domain_pct": 36.46,
+            "diagonal": false
+          }
+        },
+        "phishstorm": {
+          "grambeddings": {
+            "test_domains": 113490,
+            "shared_domains": 1075,
+            "shared_domain_pct": 0.95,
+            "test_rows": 159298,
+            "rows_with_shared_domain_pct": 2.85,
+            "diagonal": false
+          },
+          "kaggle03": {
+            "test_domains": 40478,
+            "shared_domains": 3766,
+            "shared_domain_pct": 9.3,
+            "test_rows": 89451,
+            "rows_with_shared_domain_pct": 29.53,
+            "diagonal": false
+          },
+          "phishstorm": {
+            "test_domains": 9996,
+            "shared_domains": 5623,
+            "shared_domain_pct": 56.25,
+            "test_rows": 18623,
+            "rows_with_shared_domain_pct": 75.5,
+            "diagonal": true
+          },
+          "iscx2016": {
+            "test_domains": 1299,
+            "shared_domains": 101,
+            "shared_domain_pct": 7.78,
+            "test_rows": 3711,
+            "rows_with_shared_domain_pct": 14.93,
+            "diagonal": false
+          }
+        },
+        "iscx2016": {
+          "grambeddings": {
+            "test_domains": 113490,
+            "shared_domains": 72,
+            "shared_domain_pct": 0.06,
+            "test_rows": 159298,
+            "rows_with_shared_domain_pct": 0.55,
+            "diagonal": false
+          },
+          "kaggle03": {
+            "test_domains": 40478,
+            "shared_domains": 177,
+            "shared_domain_pct": 0.44,
+            "test_rows": 89451,
+            "rows_with_shared_domain_pct": 3.08,
+            "diagonal": false
+          },
+          "phishstorm": {
+            "test_domains": 9996,
+            "shared_domains": 91,
+            "shared_domain_pct": 0.91,
+            "test_rows": 18623,
+            "rows_with_shared_domain_pct": 4.03,
+            "diagonal": false
+          },
+          "iscx2016": {
+            "test_domains": 1299,
+            "shared_domains": 967,
+            "shared_domain_pct": 74.44,
+            "test_rows": 3711,
+            "rows_with_shared_domain_pct": 90.86,
+            "diagonal": true
+          }
+        }
+      },
+      "resumo": {
+        "diagonal_max_pct": 74.44,
+        "fora_diagonal_min_pct": 0.06,
+        "fora_diagonal_max_pct": 34.69,
+        "fora_diagonal_media_pct": 7.88,
+        "fora_diagonal_linhas_max_pct": 50.49,
+        "fora_diagonal_linhas_media_pct": 17.97
+      }
+    },
+    "etld1": {
+      "matriz": {
+        "grambeddings": {
+          "grambeddings": {
+            "test_domains": 83745,
+            "shared_domains": 0,
+            "shared_domain_pct": 0.0,
+            "test_rows": 156676,
+            "rows_with_shared_domain_pct": 0.0,
+            "diagonal": true
+          },
+          "kaggle03": {
+            "test_domains": 28149,
+            "shared_domains": 1061,
+            "shared_domain_pct": 3.77,
+            "test_rows": 87492,
+            "rows_with_shared_domain_pct": 27.63,
+            "diagonal": false
+          },
+          "phishstorm": {
+            "test_domains": 6208,
+            "shared_domains": 401,
+            "shared_domain_pct": 6.46,
+            "test_rows": 16982,
+            "rows_with_shared_domain_pct": 21.38,
+            "diagonal": false
+          },
+          "iscx2016": {
+            "test_domains": 600,
+            "shared_domains": 18,
+            "shared_domain_pct": 3.0,
+            "test_rows": 2969,
+            "rows_with_shared_domain_pct": 16.98,
+            "diagonal": false
+          }
+        },
+        "kaggle03": {
+          "grambeddings": {
+            "test_domains": 83745,
+            "shared_domains": 1098,
+            "shared_domain_pct": 1.31,
+            "test_rows": 156676,
+            "rows_with_shared_domain_pct": 15.62,
+            "diagonal": false
+          },
+          "kaggle03": {
+            "test_domains": 28149,
+            "shared_domains": 0,
+            "shared_domain_pct": 0.0,
+            "test_rows": 87492,
+            "rows_with_shared_domain_pct": 0.0,
+            "diagonal": true
+          },
+          "phishstorm": {
+            "test_domains": 6208,
+            "shared_domains": 1314,
+            "shared_domain_pct": 21.17,
+            "test_rows": 16982,
+            "rows_with_shared_domain_pct": 31.96,
+            "diagonal": false
+          },
+          "iscx2016": {
+            "test_domains": 600,
+            "shared_domains": 43,
+            "shared_domain_pct": 7.17,
+            "test_rows": 2969,
+            "rows_with_shared_domain_pct": 49.48,
+            "diagonal": false
+          }
+        },
+        "phishstorm": {
+          "grambeddings": {
+            "test_domains": 83745,
+            "shared_domains": 423,
+            "shared_domain_pct": 0.51,
+            "test_rows": 156676,
+            "rows_with_shared_domain_pct": 2.06,
+            "diagonal": false
+          },
+          "kaggle03": {
+            "test_domains": 28149,
+            "shared_domains": 1287,
+            "shared_domain_pct": 4.57,
+            "test_rows": 87492,
+            "rows_with_shared_domain_pct": 12.76,
+            "diagonal": false
+          },
+          "phishstorm": {
+            "test_domains": 6208,
+            "shared_domains": 0,
+            "shared_domain_pct": 0.0,
+            "test_rows": 16982,
+            "rows_with_shared_domain_pct": 0.0,
+            "diagonal": true
+          },
+          "iscx2016": {
+            "test_domains": 600,
+            "shared_domains": 27,
+            "shared_domain_pct": 4.5,
+            "test_rows": 2969,
+            "rows_with_shared_domain_pct": 11.72,
+            "diagonal": false
+          }
+        },
+        "iscx2016": {
+          "grambeddings": {
+            "test_domains": 83745,
+            "shared_domains": 29,
+            "shared_domain_pct": 0.03,
+            "test_rows": 156676,
+            "rows_with_shared_domain_pct": 0.32,
+            "diagonal": false
+          },
+          "kaggle03": {
+            "test_domains": 28149,
+            "shared_domains": 50,
+            "shared_domain_pct": 0.18,
+            "test_rows": 87492,
+            "rows_with_shared_domain_pct": 1.06,
+            "diagonal": false
+          },
+          "phishstorm": {
+            "test_domains": 6208,
+            "shared_domains": 39,
+            "shared_domain_pct": 0.63,
+            "test_rows": 16982,
+            "rows_with_shared_domain_pct": 4.56,
+            "diagonal": false
+          },
+          "iscx2016": {
+            "test_domains": 600,
+            "shared_domains": 0,
+            "shared_domain_pct": 0.0,
+            "test_rows": 2969,
+            "rows_with_shared_domain_pct": 0.0,
+            "diagonal": true
+          }
+        }
+      },
+      "resumo": {
+        "diagonal_max_pct": 0.0,
+        "fora_diagonal_min_pct": 0.03,
+        "fora_diagonal_max_pct": 21.17,
+        "fora_diagonal_media_pct": 4.44,
+        "fora_diagonal_linhas_max_pct": 49.48,
+        "fora_diagonal_linhas_media_pct": 16.29
+      }
+    }
+  },
+  "sobreposicao_loco": {
+    "oficial": {
+      "por_corpus_retido": {
+        "grambeddings": {
+          "n_train_corpora": 3,
+          "train_domains": 130778,
+          "test_domains": 113490,
+          "shared_domains": 2880,
+          "shared_domain_pct": 2.54,
+          "test_rows": 159298,
+          "rows_with_shared_domain_pct": 10.11,
+          "train_corpora": [
+            "kaggle03",
+            "phishstorm",
+            "iscx2016"
+          ]
+        },
+        "kaggle03": {
+          "n_train_corpora": 3,
+          "train_domains": 353544,
+          "test_domains": 40478,
+          "shared_domains": 5790,
+          "shared_domain_pct": 14.3,
+          "test_rows": 89451,
+          "rows_with_shared_domain_pct": 37.41,
+          "train_corpora": [
+            "grambeddings",
+            "phishstorm",
+            "iscx2016"
+          ]
+        },
+        "phishstorm": {
+          "n_train_corpora": 3,
+          "train_domains": 435714,
+          "test_domains": 9996,
+          "shared_domains": 3864,
+          "shared_domain_pct": 38.66,
+          "test_rows": 18623,
+          "rows_with_shared_domain_pct": 54.17,
+          "train_corpora": [
+            "grambeddings",
+            "kaggle03",
+            "iscx2016"
+          ]
+        },
+        "iscx2016": {
+          "n_train_corpora": 3,
+          "train_domains": 450196,
+          "test_domains": 1299,
+          "shared_domains": 233,
+          "shared_domain_pct": 17.94,
+          "test_rows": 3711,
+          "rows_with_shared_domain_pct": 40.77,
+          "train_corpora": [
+            "grambeddings",
+            "kaggle03",
+            "phishstorm"
+          ]
+        }
+      },
+      "resumo": {
+        "min_pct": 2.54,
+        "max_pct": 38.66,
+        "media_pct": 18.36,
+        "linhas_max_pct": 54.17,
+        "linhas_media_pct": 35.62,
+        "corpus_retido_mais_contaminado": "phishstorm"
+      }
+    },
+    "etld1": {
+      "por_corpus_retido": {
+        "grambeddings": {
+          "n_train_corpora": 3,
+          "train_domains": 117682,
+          "test_domains": 83745,
+          "shared_domains": 1359,
+          "shared_domain_pct": 1.62,
+          "test_rows": 156676,
+          "rows_with_shared_domain_pct": 16.08,
+          "train_corpora": [
+            "kaggle03",
+            "phishstorm",
+            "iscx2016"
+          ]
+        },
+        "kaggle03": {
+          "n_train_corpora": 3,
+          "train_domains": 314583,
+          "test_domains": 28149,
+          "shared_domains": 2228,
+          "shared_domain_pct": 7.92,
+          "test_rows": 87492,
+          "rows_with_shared_domain_pct": 35.58,
+          "train_corpora": [
+            "grambeddings",
+            "phishstorm",
+            "iscx2016"
+          ]
+        },
+        "phishstorm": {
+          "n_train_corpora": 3,
+          "train_domains": 389078,
+          "test_domains": 6208,
+          "shared_domains": 1578,
+          "shared_domain_pct": 25.42,
+          "test_rows": 16982,
+          "rows_with_shared_domain_pct": 47.0,
+          "train_corpora": [
+            "grambeddings",
+            "kaggle03",
+            "iscx2016"
+          ]
+        },
+        "iscx2016": {
+          "n_train_corpora": 3,
+          "train_domains": 403168,
+          "test_domains": 600,
+          "shared_domains": 61,
+          "shared_domain_pct": 10.17,
+          "test_rows": 2969,
+          "rows_with_shared_domain_pct": 51.5,
+          "train_corpora": [
+            "grambeddings",
+            "kaggle03",
+            "phishstorm"
+          ]
+        }
+      },
+      "resumo": {
+        "min_pct": 1.62,
+        "max_pct": 25.42,
+        "media_pct": 11.28,
+        "linhas_max_pct": 51.5,
+        "linhas_media_pct": 37.54,
+        "corpus_retido_mais_contaminado": "phishstorm"
+      }
+    }
+  },
+  "psl_privada_contra_icann": {
+    "grambeddings": {
+      "n_urls": 800000,
+      "n_urls_mudam": 32730,
+      "n_grupos_icann_afetados": 422,
+      "n_grupos_resultantes": 20425
+    },
+    "kaggle03": {
+      "n_urls": 450176,
+      "n_urls_mudam": 8670,
+      "n_grupos_icann_afetados": 220,
+      "n_grupos_resultantes": 7115
+    },
+    "phishstorm": {
+      "n_urls": 96018,
+      "n_urls_mudam": 322,
+      "n_grupos_icann_afetados": 70,
+      "n_grupos_resultantes": 216
+    },
+    "iscx2016": {
+      "n_urls": 19965,
+      "n_urls_mudam": 197,
+      "n_grupos_icann_afetados": 19,
+      "n_grupos_resultantes": 122
+    },
+    "pdrcnn": {
+      "n_urls": 538149,
+      "n_urls_mudam": 19195,
+      "n_grupos_icann_afetados": 204,
+      "n_grupos_resultantes": 18344
+    },
+    "sid321axn": {
+      "n_urls": 651158,
+      "n_urls_mudam": 10014,
+      "n_grupos_icann_afetados": 216,
+      "n_grupos_resultantes": 7762
+    }
+  },
+  "dominios_duas_classes": {
+    "grambeddings": {
+      "bruto": {
+        "n_dominios": 417787,
+        "n_dominios_duas_classes": 395,
+        "n_linhas_duas_classes": 32167
+      },
+      "deduplicado_etld1": {
+        "n_dominios": 417787,
+        "n_dominios_duas_classes": 394,
+        "n_linhas_duas_classes": 31755
+      }
+    },
+    "kaggle03": {
+      "bruto": {
+        "n_dominios": 140553,
+        "n_dominios_duas_classes": 310,
+        "n_linhas_duas_classes": 32939
+      },
+      "deduplicado_etld1": {
+        "n_dominios": 140553,
+        "n_dominios_duas_classes": 310,
+        "n_linhas_duas_classes": 32842
+      }
+    },
+    "phishstorm": {
+      "bruto": {
+        "n_dominios": 31040,
+        "n_dominios_duas_classes": 52,
+        "n_linhas_duas_classes": 3987
+      },
+      "deduplicado_etld1": {
+        "n_dominios": 31040,
+        "n_dominios_duas_classes": 52,
+        "n_linhas_duas_classes": 3952
+      }
+    },
+    "iscx2016": {
+      "bruto": {
+        "n_dominios": 3255,
+        "n_dominios_duas_classes": 1,
+        "n_linhas_duas_classes": 111
+      },
+      "deduplicado_etld1": {
+        "n_dominios": 3255,
+        "n_dominios_duas_classes": 1,
+        "n_linhas_duas_classes": 99
+      }
+    },
+    "pdrcnn": {
+      "bruto": {
+        "n_dominios": 519275,
+        "n_dominios_duas_classes": 320,
+        "n_linhas_duas_classes": 5075
+      },
+      "deduplicado_etld1": {
+        "n_dominios": 519275,
+        "n_dominios_duas_classes": 319,
+        "n_linhas_duas_classes": 4928
+      }
+    },
+    "sid321axn": {
+      "bruto": {
+        "n_dominios": 162827,
+        "n_dominios_duas_classes": 4351,
+        "n_linhas_duas_classes": 143777
+      },
+      "deduplicado_etld1": {
+        "n_dominios": 161629,
+        "n_dominios_duas_classes": 2656,
+        "n_linhas_duas_classes": 132074
+      }
+    }
+  },
+  "desvio_prevalencia": {
+    "oficial": {
+      "grambeddings": {
+        "n_dataset": 788654,
+        "prevalencia_dataset": 0.4939580601886252,
+        "train": {
+          "n": 566420,
+          "prevalencia": 0.4928851382366442,
+          "desvio": -0.0010729219519809985
+        },
+        "val": {
+          "n": 62936,
+          "prevalencia": 0.4928816575568832,
+          "desvio": -0.0010764026317420239
+        },
+        "test": {
+          "n": 159298,
+          "prevalencia": 0.4981983452397394,
+          "desvio": 0.004240285051114179
+        }
+      },
+      "kaggle03": {
+        "n_dataset": 441173,
+        "prevalencia_dataset": 0.21651596992563008,
+        "train": {
+          "n": 316550,
+          "prevalencia": 0.2146169641446849,
+          "desvio": -0.0018990057809451788
+        },
+        "val": {
+          "n": 35172,
+          "prevalencia": 0.21460252473558514,
+          "desvio": -0.0019134451900449378
+        },
+        "test": {
+          "n": 89451,
+          "prevalencia": 0.22398855239181228,
+          "desvio": 0.007472582466182209
+        }
+      },
+      "phishstorm": {
+        "n_dataset": 87979,
+        "prevalencia_dataset": 0.4545743870696416,
+        "train": {
+          "n": 62420,
+          "prevalencia": 0.4458026273630247,
+          "desvio": -0.008771759706616922
+        },
+        "val": {
+          "n": 6936,
+          "prevalencia": 0.4457900807381776,
+          "desvio": -0.008784306331463987
+        },
+        "test": {
+          "n": 18623,
+          "prevalencia": 0.48724695269290663,
+          "desvio": 0.03267256562326504
+        }
+      },
+      "iscx2016": {
+        "n_dataset": 16249,
+        "prevalencia_dataset": 0.4415656348082959,
+        "train": {
+          "n": 11284,
+          "prevalencia": 0.4293690180786955,
+          "desvio": -0.012196616729600429
+        },
+        "val": {
+          "n": 1254,
+          "prevalencia": 0.42902711323763953,
+          "desvio": -0.01253852157065638
+        },
+        "test": {
+          "n": 3711,
+          "prevalencia": 0.4828887092427917,
+          "desvio": 0.04132307443449579
+        }
+      }
+    },
+    "etld1": {
+      "grambeddings": {
+        "n_dataset": 783379,
+        "prevalencia_dataset": 0.4910420115933667,
+        "train": {
+          "n": 548365,
+          "prevalencia": 0.49104155079189954,
+          "desvio": -4.608014671503291e-07
+        },
+        "val": {
+          "n": 78338,
+          "prevalencia": 0.49103883172917356,
+          "desvio": -3.17986419312577e-06
+        },
+        "test": {
+          "n": 156676,
+          "prevalencia": 0.4910452143276571,
+          "desvio": 3.2027342903862e-06
+        }
+      },
+      "kaggle03": {
+        "n_dataset": 437458,
+        "prevalencia_dataset": 0.20999730259819227,
+        "train": {
+          "n": 306219,
+          "prevalencia": 0.20999676701968198,
+          "desvio": -5.355785102911792e-07
+        },
+        "val": {
+          "n": 43747,
+          "prevalencia": 0.2100029716323405,
+          "desvio": 5.669034148225727e-06
+        },
+        "test": {
+          "n": 87492,
+          "prevalencia": 0.20999634252274493,
+          "desvio": -9.600754473371165e-07
+        }
+      },
+      "phishstorm": {
+        "n_dataset": 84912,
+        "prevalencia_dataset": 0.4349090823440739,
+        "train": {
+          "n": 59439,
+          "prevalencia": 0.43489964501421624,
+          "desvio": -9.43732985764223e-06
+        },
+        "val": {
+          "n": 8491,
+          "prevalencia": 0.4349311035213756,
+          "desvio": 2.2021177301712047e-05
+        },
+        "test": {
+          "n": 16982,
+          "prevalencia": 0.4349311035213756,
+          "desvio": 2.2021177301712047e-05
+        }
+      },
+      "iscx2016": {
+        "n_dataset": 14844,
+        "prevalencia_dataset": 0.4146456480732956,
+        "train": {
+          "n": 10390,
+          "prevalencia": 0.41462945139557267,
+          "desvio": -1.6196677722957187e-05
+        },
+        "val": {
+          "n": 1485,
+          "prevalencia": 0.4148148148148148,
+          "desvio": 0.00016916674151917777
+        },
+        "test": {
+          "n": 2969,
+          "prevalencia": 0.41461771640282924,
+          "desvio": -2.7931670466385672e-05
+        }
+      }
+    }
+  },
+  "esquema_por_classe": {
+    "grambeddings": {
+      "benigno": {
+        "n": 400000,
+        "explicito": 0.9992375,
+        "http": 0.40644,
+        "https": 0.592735,
+        "nenhum": 0.0007625
+      },
+      "phishing": {
+        "n": 400000,
+        "explicito": 0.99999,
+        "http": 0.531895,
+        "https": 0.468095,
+        "nenhum": 1e-05
+      }
+    },
+    "kaggle03": {
+      "benigno": {
+        "n": 345738,
+        "explicito": 0.9998958749110598,
+        "http": 0.0,
+        "https": 0.9998929825474782,
+        "nenhum": 0.00010412508894018014
+      },
+      "phishing": {
+        "n": 104438,
+        "explicito": 0.9959880503265095,
+        "http": 0.9358088052241521,
+        "https": 0.0601122196901511,
+        "nenhum": 0.004011949673490492
+      }
+    },
+    "phishstorm": {
+      "benigno": {
+        "n": 48009,
+        "explicito": 1.0,
+        "http": 0.9776083650982108,
+        "https": 0.02205836405673936,
+        "nenhum": 0.0
+      },
+      "phishing": {
+        "n": 48009,
+        "explicito": 0.9997708762940282,
+        "http": 0.9855443770959612,
+        "https": 0.014184840342435794,
+        "nenhum": 0.00022912370597179697
+      }
+    },
+    "iscx2016": {
+      "benigno": {
+        "n": 10000,
+        "explicito": 1.0,
+        "http": 0.9448,
+        "https": 0.0552,
+        "nenhum": 0.0
+      },
+      "phishing": {
+        "n": 9965,
+        "explicito": 0.998193677872554,
+        "http": 0.9785248369292524,
+        "https": 0.01946813848469644,
+        "nenhum": 0.0018063221274460613
+      }
+    },
+    "pdrcnn": {
+      "benigno": {
+        "n": 522396,
+        "explicito": 0.0,
+        "http": 0.0,
+        "https": 0.0,
+        "nenhum": 1.0
+      },
+      "phishing": {
+        "n": 15753,
+        "explicito": 0.95029518187012,
+        "http": 0.527899447724243,
+        "https": 0.422395734145877,
+        "nenhum": 0.04970481812988002
+      }
+    },
+    "sid321axn": {
+      "benigno": {
+        "n": 428101,
+        "explicito": 0.08263937715632526,
+        "http": 0.07808437728479961,
+        "https": 0.004554999871525645,
+        "nenhum": 0.9173606228436747
+      },
+      "phishing": {
+        "n": 223057,
+        "explicito": 0.6818346879945485,
+        "http": 0.6207471632811344,
+        "https": 0.06107855839538773,
+        "nenhum": 0.3181653120054515
+      }
+    }
+  },
+  "medias_por_classe": {
+    "grambeddings": {
+      "benigno": {
+        "n": 400000,
+        "medias": {
+          "url_length": 46.4307025,
+          "domain_length": 17.95191,
+          "path_length": 18.3444725,
+          "query_length": 2.1144875,
+          "fragment_length": 0.3183525,
+          "max_token_length": 13.057235,
+          "digit_count": 1.8225375,
+          "letter_count": 35.9245225,
+          "special_char_count": 8.6815625,
+          "dot_count": 1.9249325,
+          "slash_count": 3.9484325,
+          "hyphen_count": 1.1193225,
+          "underscore_count": 0.10894,
+          "percent_count": 0.25975,
+          "at_count": 0.0005475,
+          "question_count": 0.0667425,
+          "equal_count": 0.1206025,
+          "ampersand_count": 0.05274,
+          "hash_count": 0.0310075,
+          "subdomain_count": 0.6324025,
+          "path_tokens": 1.40917,
+          "query_params": 0.1181775,
+          "www_count": 0.444425,
+          "has_ip": 9.25e-05,
+          "has_https": 0.592735,
+          "has_www": 0.44268,
+          "has_suspicious_tld": 0.0003875,
+          "has_suspicious_extension": 0.000835,
+          "has_suspicious_keywords": 0.0216925,
+          "has_url_shortener": 0.0,
+          "has_double_slash": 0.0016325,
+          "has_at_symbol": 0.00052,
+          "has_port": 0.000635,
+          "has_query": 0.066335,
+          "has_fragment": 0.0302025,
+          "digit_letter_ratio": 0.03724269534203573,
+          "special_char_ratio": 0.1939766943619633,
+          "subdomain_ratio": 0.03473851186346263,
+          "path_domain_ratio": 1.1276532040425298,
+          "url_entropy": 4.099039393815398,
+          "domain_entropy": 3.3760100314426422
+        }
+      },
+      "phishing": {
+        "n": 400000,
+        "medias": {
+          "url_length": 86.2081375,
+          "domain_length": 23.164535,
+          "path_length": 34.190295,
+          "query_length": 20.761725,
+          "fragment_length": 0.1730175,
+          "max_token_length": 30.0382625,
+          "digit_count": 14.9819425,
+          "letter_count": 59.401,
+          "special_char_count": 11.824365,
+          "dot_count": 2.8135225,
+          "slash_count": 5.2759975,
+          "hyphen_count": 0.9767325,
+          "underscore_count": 0.2898525,
+          "percent_count": 0.12861,
+          "at_count": 0.032475,
+          "question_count": 0.2350975,
+          "equal_count": 0.5879475,
+          "ampersand_count": 0.32159,
+          "hash_count": 0.0060375,
+          "subdomain_count": 0.6236475,
+          "path_tokens": 2.8637725,
+          "query_params": 0.5124175,
+          "www_count": 0.1667,
+          "has_ip": 0.0226475,
+          "has_https": 0.468095,
+          "has_www": 0.1389125,
+          "has_suspicious_tld": 0.03271,
+          "has_suspicious_extension": 0.0041075,
+          "has_suspicious_keywords": 0.3704575,
+          "has_url_shortener": 0.00134,
+          "has_double_slash": 0.0009025,
+          "has_at_symbol": 0.0257775,
+          "has_port": 2.25e-05,
+          "has_query": 0.215585,
+          "has_fragment": 0.0051475,
+          "digit_letter_ratio": 0.13422700390305517,
+          "special_char_ratio": 0.16039321552886163,
+          "subdomain_ratio": 0.023326090991571544,
+          "path_domain_ratio": 1.918979498798136,
+          "url_entropy": 4.457305297400356,
+          "domain_entropy": 3.5902149282875655
+        }
+      }
+    },
+    "kaggle03": {
+      "benigno": {
+        "n": 345738,
+        "medias": {
+          "url_length": 58.48143970289641,
+          "domain_length": 19.61628747780111,
+          "path_length": 27.577422788354188,
+          "query_length": 3.1514383724091655,
+          "fragment_length": 0.00010701745252185181,
+          "max_token_length": 13.255074651904042,
+          "digit_count": 3.275818683511792,
+          "letter_count": 44.703573225968796,
+          "special_char_count": 10.501819296692872,
+          "dot_count": 2.6522829425750136,
+          "slash_count": 4.2979076641850185,
+          "hyphen_count": 1.4615055330915316,
+          "underscore_count": 0.46759106606736894,
+          "percent_count": 0.0731218437082415,
+          "at_count": 0.0006247505336410808,
+          "question_count": 0.1334507632947492,
+          "equal_count": 0.20914102586351516,
+          "ampersand_count": 0.07608073165229162,
+          "hash_count": 1.1569454326686682e-05,
+          "subdomain_count": 1.2358317569951813,
+          "path_tokens": 2.0094898449114647,
+          "query_params": 0.20828488624334032,
+          "www_count": 0.9991438603798252,
+          "has_ip": 0.0,
+          "has_https": 0.9998929825474782,
+          "has_www": 0.9979840225835749,
+          "has_suspicious_tld": 2.8923635816716704e-05,
+          "has_suspicious_extension": 0.0005119483539558857,
+          "has_suspicious_keywords": 0.07747485089865737,
+          "has_url_shortener": 3.760072656173172e-05,
+          "has_double_slash": 4.3385453725075054e-05,
+          "has_at_symbol": 0.0005813650799160058,
+          "has_port": 0.00030948290323886877,
+          "has_query": 0.132941707304375,
+          "has_fragment": 1.1569454326686682e-05,
+          "digit_letter_ratio": 0.05891887829708704,
+          "special_char_ratio": 0.18497919677822264,
+          "subdomain_ratio": 0.06535731728123327,
+          "path_domain_ratio": 1.5450815943099188,
+          "url_entropy": 4.316852010276536,
+          "domain_entropy": 3.3679382109104283
+        }
+      },
+      "phishing": {
+        "n": 104438,
+        "medias": {
+          "url_length": 66.04415059652617,
+          "domain_length": 18.10482774469063,
+          "path_length": 27.042685612516518,
+          "query_length": 13.431720255079568,
+          "fragment_length": 0.13193473639862885,
+          "max_token_length": 20.14906451674678,
+          "digit_count": 7.234052739424348,
+          "letter_count": 48.15089335299412,
+          "special_char_count": 10.651975334648307,
+          "dot_count": 2.5154924452785385,
+          "slash_count": 4.9276700051705316,
+          "hyphen_count": 0.5581301825006224,
+          "underscore_count": 0.2604128765391907,
+          "percent_count": 0.14590474731419598,
+          "at_count": 0.028179398303299564,
+          "question_count": 0.21708573507727072,
+          "equal_count": 0.41993335759014916,
+          "ampersand_count": 0.2794672437235489,
+          "hash_count": 0.005553534154235049,
+          "subdomain_count": 0.37396349987552424,
+          "path_tokens": 2.522367337559126,
+          "query_params": 0.4537333154598901,
+          "www_count": 0.15676286409161416,
+          "has_ip": 0.03785020777877784,
+          "has_https": 0.0601122196901511,
+          "has_www": 0.13009632509239932,
+          "has_suspicious_tld": 0.00867500335127061,
+          "has_suspicious_extension": 0.023420594036653326,
+          "has_suspicious_keywords": 0.21576437695091824,
+          "has_url_shortener": 0.005371608035389418,
+          "has_double_slash": 0.006913192516133974,
+          "has_at_symbol": 0.026369712173729867,
+          "has_port": 0.013146555851318485,
+          "has_query": 0.18746050288209273,
+          "has_fragment": 0.003408720963633926,
+          "digit_letter_ratio": 0.09776093102783068,
+          "special_char_ratio": 0.18063713922767888,
+          "subdomain_ratio": 0.016916215321614712,
+          "path_domain_ratio": 1.7022862719158849,
+          "url_entropy": 4.28925239360671,
+          "domain_entropy": 3.382397747066733
+        }
+      }
+    },
+    "phishstorm": {
+      "benigno": {
+        "n": 48009,
+        "medias": {
+          "url_length": 47.49299089754005,
+          "domain_length": 17.126747068258034,
+          "path_length": 21.68410089774834,
+          "query_length": 1.5115499177237601,
+          "fragment_length": 0.06173842404549147,
+          "max_token_length": 11.020704451248724,
+          "digit_count": 1.750713407902685,
+          "letter_count": 36.49534462288321,
+          "special_char_count": 9.245453977379242,
+          "dot_count": 2.6200920660709452,
+          "slash_count": 4.467308213043387,
+          "hyphen_count": 0.49097044304192966,
+          "underscore_count": 0.23820533649940637,
+          "percent_count": 0.07436105730175592,
+          "at_count": 0.0004790768397592118,
+          "question_count": 0.07794371888604221,
+          "equal_count": 0.1219146410048116,
+          "ampersand_count": 0.04724114228582141,
+          "hash_count": 0.004519985835989085,
+          "subdomain_count": 1.0180382844883251,
+          "path_tokens": 2.0929200774854713,
+          "query_params": 0.1224978649836489,
+          "www_count": 0.7037638776062821,
+          "has_ip": 4.165885563123581e-05,
+          "has_https": 0.02205836405673936,
+          "has_www": 0.6798308650461372,
+          "has_suspicious_tld": 0.0,
+          "has_suspicious_extension": 0.00010414713907808953,
+          "has_suspicious_keywords": 0.023912183132329356,
+          "has_url_shortener": 0.0,
+          "has_double_slash": 2.0829427815617906e-05,
+          "has_at_symbol": 0.0003957591284967402,
+          "has_port": 0.00022912370597179697,
+          "has_query": 0.07748547147409861,
+          "has_fragment": 0.004353350413464142,
+          "digit_letter_ratio": 0.04160025214705435,
+          "special_char_ratio": 0.2011285136735887,
+          "subdomain_ratio": 0.061286337821833015,
+          "path_domain_ratio": 1.3529207185753462,
+          "url_entropy": 4.150628815981704,
+          "domain_entropy": 3.288174640144345
+        }
+      },
+      "phishing": {
+        "n": 48009,
+        "medias": {
+          "url_length": 77.97392155637485,
+          "domain_length": 19.25990960028328,
+          "path_length": 36.210606344643715,
+          "query_length": 15.022266658334896,
+          "fragment_length": 0.24076735612072736,
+          "max_token_length": 22.688204295028015,
+          "digit_count": 9.625257764169218,
+          "letter_count": 56.04603303547252,
+          "special_char_count": 12.271449103293133,
+          "dot_count": 2.8367597742090025,
+          "slash_count": 5.856360265783499,
+          "hyphen_count": 0.5784748692953404,
+          "underscore_count": 0.2764273365410652,
+          "percent_count": 0.14547272386427545,
+          "at_count": 0.02166260492824262,
+          "question_count": 0.2903830531775292,
+          "equal_count": 0.46135099668812096,
+          "ampersand_count": 0.40079985002811974,
+          "hash_count": 0.008019329709012894,
+          "subdomain_count": 0.5257139286383803,
+          "path_tokens": 3.3545793497052636,
+          "query_params": 0.5625195275885772,
+          "www_count": 0.3688058489033306,
+          "has_ip": 0.005978045783082339,
+          "has_https": 0.014184840342435794,
+          "has_www": 0.3453935720385761,
+          "has_suspicious_tld": 0.003749297006811223,
+          "has_suspicious_extension": 0.0013539128080151638,
+          "has_suspicious_keywords": 0.26295069674436045,
+          "has_url_shortener": 0.006103022349976046,
+          "has_double_slash": 0.001770501364327522,
+          "has_at_symbol": 0.020017080130808808,
+          "has_port": 0.0005415651232060655,
+          "has_query": 0.17988293861567622,
+          "has_fragment": 0.007102834885125706,
+          "digit_letter_ratio": 0.10041051059479839,
+          "special_char_ratio": 0.16879490333003047,
+          "subdomain_ratio": 0.024560784350508544,
+          "path_domain_ratio": 2.12118110557824,
+          "url_entropy": 4.390839286369386,
+          "domain_entropy": 3.425774973064395
+        }
+      }
+    },
+    "iscx2016": {
+      "benigno": {
+        "n": 10000,
+        "medias": {
+          "url_length": 115.6283,
+          "domain_length": 11.8007,
+          "path_length": 74.9549,
+          "query_length": 21.5423,
+          "fragment_length": 0.0,
+          "max_token_length": 27.1182,
+          "digit_count": 15.5244,
+          "letter_count": 77.1366,
+          "special_char_count": 22.9673,
+          "dot_count": 1.9361,
+          "slash_count": 5.6754,
+          "hyphen_count": 6.4167,
+          "underscore_count": 0.5422,
+          "percent_count": 5.4828,
+          "at_count": 0.0071,
+          "question_count": 0.2767,
+          "equal_count": 0.7112,
+          "ampersand_count": 0.4382,
+          "hash_count": 0.0,
+          "subdomain_count": 0.0125,
+          "path_tokens": 3.3551,
+          "query_params": 0.7068,
+          "www_count": 0.0059,
+          "has_ip": 0.0,
+          "has_https": 0.0552,
+          "has_www": 0.003,
+          "has_suspicious_tld": 0.0,
+          "has_suspicious_extension": 0.0,
+          "has_suspicious_keywords": 0.1083,
+          "has_url_shortener": 0.0,
+          "has_double_slash": 0.002,
+          "has_at_symbol": 0.0068,
+          "has_port": 0.0,
+          "has_query": 0.2702,
+          "has_fragment": 0.0,
+          "digit_letter_ratio": 0.14773738012067042,
+          "special_char_ratio": 0.19163572967574,
+          "subdomain_ratio": 0.00098968998901546,
+          "path_domain_ratio": 7.014473547567428,
+          "url_entropy": 4.482596489453316,
+          "domain_entropy": 3.0753003322958947
+        }
+      },
+      "phishing": {
+        "n": 9965,
+        "medias": {
+          "url_length": 84.40852985449072,
+          "domain_length": 24.740190667335675,
+          "path_length": 38.878675363773205,
+          "query_length": 13.481485198193678,
+          "fragment_length": 0.03672854992473658,
+          "max_token_length": 27.198795785248368,
+          "digit_count": 8.793577521324636,
+          "letter_count": 62.33105870546914,
+          "special_char_count": 13.281786251881586,
+          "dot_count": 3.8749623682890117,
+          "slash_count": 5.91058705469142,
+          "hyphen_count": 0.8656297039638735,
+          "underscore_count": 0.16056196688409433,
+          "percent_count": 0.17029603612644256,
+          "at_count": 0.0035122930255895636,
+          "question_count": 0.26171600602107375,
+          "equal_count": 0.4892122428499749,
+          "ampersand_count": 0.2156547917711992,
+          "hash_count": 0.0030105368790767687,
+          "subdomain_count": 1.5252383341695936,
+          "path_tokens": 2.79568489713999,
+          "query_params": 0.3867536377320622,
+          "www_count": 0.4870045158053186,
+          "has_ip": 0.015052684395383844,
+          "has_https": 0.01946813848469644,
+          "has_www": 0.43010536879076766,
+          "has_suspicious_tld": 0.0037129954841946815,
+          "has_suspicious_extension": 0.0017059708981435023,
+          "has_suspicious_keywords": 0.44756648268941296,
+          "has_url_shortener": 0.00020070245860511792,
+          "has_double_slash": 0.009934771700953337,
+          "has_at_symbol": 0.0033115905669844456,
+          "has_port": 0.0007024586051179127,
+          "has_query": 0.18474661314601104,
+          "has_fragment": 0.002609131961866533,
+          "digit_letter_ratio": 0.0952578627143188,
+          "special_char_ratio": 0.17099029631902987,
+          "subdomain_ratio": 0.04758366285545244,
+          "path_domain_ratio": 1.8896369154214097,
+          "url_entropy": 4.475539331201686,
+          "domain_entropy": 3.514835038259289
+        }
+      }
+    }
+  }
+}

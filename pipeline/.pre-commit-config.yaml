@@ -1,0 +1,42 @@
+# Hooks de pre-commit. Instalar com: pre-commit install
+#
+# Notas:
+# - `black` foi removido: o `ruff-format` faz o mesmo trabalho e o hook antigo
+#   fixava `language_version: python3.11`, que não é mais a versão do projeto
+#   (hoje é 3.14.3, ver SDD.md §11).
+# - `check-merge-conflict` importa: o repositório já teve marcadores de conflito
+#   commitados no README (bug B9).
+# - `paper/template/` fica de fora: é o template SBC de terceiros, não se reformata.
+
+exclude: '^(paper/template/|\.tldextract/)'
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+        args: [--maxkb=2048]
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: debug-statements
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.0.290
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: pytest-check
+        name: pytest-check
+        entry: venv/Scripts/python.exe -m pytest
+        language: system
+        pass_filenames: false
+        always_run: true
+        args: [tests/, -q]

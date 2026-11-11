@@ -1,0 +1,366 @@
+{
+  "iscx2016/oficial": {
+    "corpus": "iscx2016",
+    "regime": "oficial",
+    "n_train": 11284,
+    "n_val": 1254,
+    "n_test": 3711,
+    "n_total": 16249,
+    "n_domains_total": 3255,
+    "domain_overlap": {
+      "train_val": 339,
+      "train_test": 967,
+      "val_test": 330
+    },
+    "partitions": {
+      "train": {
+        "n_rows": 11284,
+        "n_domains": 2752,
+        "n_phishing": 4845,
+        "n_benigno": 6439,
+        "phishing_pct": 42.94
+      },
+      "val": {
+        "n_rows": 1254,
+        "n_domains": 559,
+        "n_phishing": 538,
+        "n_benigno": 716,
+        "phishing_pct": 42.9
+      },
+      "test": {
+        "n_rows": 3711,
+        "n_domains": 1299,
+        "n_phishing": 1792,
+        "n_benigno": 1919,
+        "phishing_pct": 48.29
+      }
+    },
+    "dedup": {
+      "n_antes": 19965,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 3716,
+      "n_final": 16249,
+      "n_sem_url_norm": 0,
+      "n_repetidas_treino_teste": 1405
+    }
+  },
+  "phishstorm/oficial": {
+    "corpus": "phishstorm",
+    "regime": "oficial",
+    "n_train": 62420,
+    "n_val": 6936,
+    "n_test": 18623,
+    "n_total": 87979,
+    "n_domains_total": 31049,
+    "domain_overlap": {
+      "train_val": 2607,
+      "train_test": 5623,
+      "val_test": 1909
+    },
+    "partitions": {
+      "train": {
+        "n_rows": 62420,
+        "n_domains": 24955,
+        "n_phishing": 27827,
+        "n_benigno": 34593,
+        "phishing_pct": 44.58
+      },
+      "val": {
+        "n_rows": 6936,
+        "n_domains": 4532,
+        "n_phishing": 3092,
+        "n_benigno": 3844,
+        "phishing_pct": 44.58
+      },
+      "test": {
+        "n_rows": 18623,
+        "n_domains": 9996,
+        "n_phishing": 9074,
+        "n_benigno": 9549,
+        "phishing_pct": 48.72
+      }
+    },
+    "dedup": {
+      "n_antes": 96018,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 8039,
+      "n_final": 87979,
+      "n_sem_url_norm": 9,
+      "n_repetidas_treino_teste": 3067
+    }
+  },
+  "kaggle03/oficial": {
+    "corpus": "kaggle03",
+    "regime": "oficial",
+    "n_train": 316550,
+    "n_val": 35172,
+    "n_test": 89451,
+    "n_total": 441173,
+    "n_domains_total": 140760,
+    "domain_overlap": {
+      "train_val": 9345,
+      "train_test": 18647,
+      "val_test": 6100
+    },
+    "partitions": {
+      "train": {
+        "n_rows": 316550,
+        "n_domains": 110436,
+        "n_phishing": 67937,
+        "n_benigno": 248613,
+        "phishing_pct": 21.46
+      },
+      "val": {
+        "n_rows": 35172,
+        "n_domains": 18568,
+        "n_phishing": 7548,
+        "n_benigno": 27624,
+        "phishing_pct": 21.46
+      },
+      "test": {
+        "n_rows": 89451,
+        "n_domains": 40478,
+        "n_phishing": 20036,
+        "n_benigno": 69415,
+        "phishing_pct": 22.4
+      }
+    },
+    "dedup": {
+      "n_antes": 450176,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 9003,
+      "n_final": 441173,
+      "n_sem_url_norm": 207,
+      "n_repetidas_treino_teste": 3715
+    }
+  },
+  "grambeddings/oficial": {
+    "corpus": "grambeddings",
+    "regime": "oficial",
+    "n_train": 566420,
+    "n_val": 62936,
+    "n_test": 159298,
+    "n_total": 788654,
+    "n_domains_total": 417922,
+    "domain_overlap": {
+      "train_val": 21810,
+      "train_test": 48084,
+      "val_test": 10581
+    },
+    "partitions": {
+      "train": {
+        "n_rows": 566420,
+        "n_domains": 328235,
+        "n_phishing": 279180,
+        "n_benigno": 287240,
+        "phishing_pct": 49.29
+      },
+      "val": {
+        "n_rows": 62936,
+        "n_domains": 49160,
+        "n_phishing": 31020,
+        "n_benigno": 31916,
+        "phishing_pct": 49.29
+      },
+      "test": {
+        "n_rows": 159298,
+        "n_domains": 113490,
+        "n_phishing": 79362,
+        "n_benigno": 79936,
+        "phishing_pct": 49.82
+      }
+    },
+    "dedup": {
+      "n_antes": 800000,
+      "n_conflito_linhas": 2,
+      "n_conflito_urls": 1,
+      "n_duplicatas_removidas": 11344,
+      "n_final": 788654,
+      "n_sem_url_norm": 135,
+      "n_repetidas_treino_teste": 5275
+    }
+  },
+  "iscx2016/etld1": {
+    "corpus": "iscx2016",
+    "regime": "etld1",
+    "n_train": 10390,
+    "n_val": 1485,
+    "n_test": 2969,
+    "n_total": 14844,
+    "n_domains_total": 3255,
+    "domain_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "partitions": {
+      "train": {
+        "n_rows": 10390,
+        "n_domains": 2323,
+        "n_phishing": 4308,
+        "n_benigno": 6082,
+        "phishing_pct": 41.46
+      },
+      "val": {
+        "n_rows": 1485,
+        "n_domains": 332,
+        "n_phishing": 616,
+        "n_benigno": 869,
+        "phishing_pct": 41.48
+      },
+      "test": {
+        "n_rows": 2969,
+        "n_domains": 600,
+        "n_phishing": 1231,
+        "n_benigno": 1738,
+        "phishing_pct": 41.46
+      }
+    },
+    "dedup": {
+      "n_antes": 19965,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 5121,
+      "n_final": 14844,
+      "n_sem_url_norm": 0
+    }
+  },
+  "phishstorm/etld1": {
+    "corpus": "phishstorm",
+    "regime": "etld1",
+    "n_train": 59439,
+    "n_val": 8491,
+    "n_test": 16982,
+    "n_total": 84912,
+    "n_domains_total": 31049,
+    "domain_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "partitions": {
+      "train": {
+        "n_rows": 59439,
+        "n_domains": 21737,
+        "n_phishing": 25850,
+        "n_benigno": 33589,
+        "phishing_pct": 43.49
+      },
+      "val": {
+        "n_rows": 8491,
+        "n_domains": 3104,
+        "n_phishing": 3693,
+        "n_benigno": 4798,
+        "phishing_pct": 43.49
+      },
+      "test": {
+        "n_rows": 16982,
+        "n_domains": 6208,
+        "n_phishing": 7386,
+        "n_benigno": 9596,
+        "phishing_pct": 43.49
+      }
+    },
+    "dedup": {
+      "n_antes": 96018,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 11106,
+      "n_final": 84912,
+      "n_sem_url_norm": 9
+    }
+  },
+  "kaggle03/etld1": {
+    "corpus": "kaggle03",
+    "regime": "etld1",
+    "n_train": 306219,
+    "n_val": 43747,
+    "n_test": 87492,
+    "n_total": 437458,
+    "n_domains_total": 140760,
+    "domain_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "partitions": {
+      "train": {
+        "n_rows": 306219,
+        "n_domains": 98554,
+        "n_phishing": 64305,
+        "n_benigno": 241914,
+        "phishing_pct": 21.0
+      },
+      "val": {
+        "n_rows": 43747,
+        "n_domains": 14057,
+        "n_phishing": 9187,
+        "n_benigno": 34560,
+        "phishing_pct": 21.0
+      },
+      "test": {
+        "n_rows": 87492,
+        "n_domains": 28149,
+        "n_phishing": 18373,
+        "n_benigno": 69119,
+        "phishing_pct": 21.0
+      }
+    },
+    "dedup": {
+      "n_antes": 450176,
+      "n_conflito_linhas": 0,
+      "n_conflito_urls": 0,
+      "n_duplicatas_removidas": 12718,
+      "n_final": 437458,
+      "n_sem_url_norm": 207
+    }
+  },
+  "grambeddings/etld1": {
+    "corpus": "grambeddings",
+    "regime": "etld1",
+    "n_train": 548365,
+    "n_val": 78338,
+    "n_test": 156676,
+    "n_total": 783379,
+    "n_domains_total": 417922,
+    "domain_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "partitions": {
+      "train": {
+        "n_rows": 548365,
+        "n_domains": 292098,
+        "n_phishing": 269270,
+        "n_benigno": 279095,
+        "phishing_pct": 49.1
+      },
+      "val": {
+        "n_rows": 78338,
+        "n_domains": 42079,
+        "n_phishing": 38467,
+        "n_benigno": 39871,
+        "phishing_pct": 49.1
+      },
+      "test": {
+        "n_rows": 156676,
+        "n_domains": 83745,
+        "n_phishing": 76935,
+        "n_benigno": 79741,
+        "phishing_pct": 49.1
+      }
+    },
+    "dedup": {
+      "n_antes": 800000,
+      "n_conflito_linhas": 2,
+      "n_conflito_urls": 1,
+      "n_duplicatas_removidas": 16619,
+      "n_final": 783379,
+      "n_sem_url_norm": 135
+    }
+  }
+}

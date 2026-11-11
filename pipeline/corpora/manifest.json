@@ -1,0 +1,188 @@
+{
+  "grambeddings": {
+    "by_label": {
+      "benigno_0": 400000,
+      "phishing_1": 400000
+    },
+    "by_split_oficial": {
+      "test": 160000,
+      "train": 640000
+    },
+    "load_stats_by_split": {
+      "test": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 0,
+        "raw_lines": 160000,
+        "reconstructed_lines": 0,
+        "records_out": 160000
+      },
+      "train": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 0,
+        "raw_lines": 640000,
+        "reconstructed_lines": 0,
+        "records_out": 640000
+      }
+    },
+    "n_rows": 800000,
+    "parquet_path": "corpora/grambeddings/data.parquet",
+    "sha256": "a83013ae181cbb5115dbb10f513a03916458a262483c56cebfe0003938b5c6e5"
+  },
+  "iscx2016": {
+    "by_label": {
+      "benigno_0": 10000,
+      "phishing_1": 9965
+    },
+    "by_split_oficial": {
+      "test": 3993,
+      "train": 15972
+    },
+    "load_stats_by_split": {
+      "test": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 0,
+        "raw_lines": 3993,
+        "reconstructed_lines": 0,
+        "records_out": 3993
+      },
+      "train": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 0,
+        "raw_lines": 15972,
+        "reconstructed_lines": 0,
+        "records_out": 15972
+      }
+    },
+    "n_rows": 19965,
+    "parquet_path": "corpora/iscx2016/data.parquet",
+    "sha256": "d771162ba578f6fe36439c6c967dc58198c0a139eea5d65c1e9eac8affe82ba4"
+  },
+  "kaggle03": {
+    "by_label": {
+      "benigno_0": 345738,
+      "phishing_1": 104438
+    },
+    "by_split_oficial": {
+      "test": 90036,
+      "train": 360140
+    },
+    "load_stats_by_split": {
+      "test": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 0,
+        "raw_lines": 90036,
+        "reconstructed_lines": 0,
+        "records_out": 90036
+      },
+      "train": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 0,
+        "raw_lines": 360140,
+        "reconstructed_lines": 0,
+        "records_out": 360140
+      }
+    },
+    "n_rows": 450176,
+    "parquet_path": "corpora/kaggle03/data.parquet",
+    "sha256": "1b4344a8b017a8dfc8ff590901a069f4beb83e038effaf2bdcde43e268a28be4"
+  },
+  "pdrcnn": {
+    "by_label": {
+      "benigno_0": 522396,
+      "phishing_1": 15753
+    },
+    "by_split_oficial": {
+      "test": 107630,
+      "train": 430519
+    },
+    "load_stats_by_split": {
+      "test": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 0,
+        "raw_lines": 104512,
+        "reconstructed_lines": 3013,
+        "records_out": 107630
+      },
+      "train": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 0,
+        "raw_lines": 417883,
+        "reconstructed_lines": 12245,
+        "records_out": 430519
+      }
+    },
+    "n_rows": 538149,
+    "parquet_path": "corpora/pdrcnn/data.parquet",
+    "sha256": "dba4c922d53c56adc9b5b2b4c9b883229b07e9d20087ccae4ffe34e7c801a581"
+  },
+  "phishstorm": {
+    "by_label": {
+      "benigno_0": 48009,
+      "phishing_1": 48009
+    },
+    "by_split_oficial": {
+      "test": 19204,
+      "train": 76814
+    },
+    "load_stats_by_split": {
+      "test": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 0,
+        "raw_lines": 19204,
+        "reconstructed_lines": 0,
+        "records_out": 19204
+      },
+      "train": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 0,
+        "raw_lines": 76812,
+        "reconstructed_lines": 2,
+        "records_out": 76814
+      }
+    },
+    "n_rows": 96018,
+    "parquet_path": "corpora/phishstorm/data.parquet",
+    "sha256": "b5e70d0732fe0fd0a26ecf2bc8547d8ae4bd22df3f16f781b8effc08442f4c8c"
+  },
+  "sid321axn": {
+    "by_label": {
+      "benigno_0": 428101,
+      "phishing_1": 223057
+    },
+    "by_split_oficial": {
+      "test": 130231,
+      "train": 520927
+    },
+    "load_stats_by_split": {
+      "test": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 5,
+        "raw_lines": 130236,
+        "reconstructed_lines": 0,
+        "records_out": 130231
+      },
+      "train": {
+        "dropped_bad_label": 0,
+        "dropped_empty_url": 0,
+        "dropped_unparseable": 13,
+        "raw_lines": 520940,
+        "reconstructed_lines": 0,
+        "records_out": 520927
+      }
+    },
+    "n_rows": 651158,
+    "parquet_path": "corpora/sid321axn/data.parquet",
+    "sha256": "59e06ba517bfe4c0f8e4f76834f16852b91c7167ffdc04c43f4d21e0d8a032fb"
+  }
+}

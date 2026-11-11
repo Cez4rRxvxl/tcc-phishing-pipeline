@@ -1,0 +1,204 @@
+# Lista de parâmetros de tracking para deduplicação near-duplicate
+# Estes parâmetros são ignorados durante a comparação de URLs similares
+
+# Google Analytics e Ads
+google_analytics:
+  - "utm_source"      # Fonte do tráfego
+  - "utm_medium"      # Meio/canal
+  - "utm_campaign"    # Nome da campanha  
+  - "utm_term"        # Termo de busca
+  - "utm_content"     # Conteúdo específico
+  - "gclid"           # Google Click Identifier
+  - "gclsrc"          # Google Click Source
+  - "dclid"           # DoubleClick Identifier
+  - "gbraid"          # Google Consent Mode
+  - "wbraid"          # Web & App Activity
+  - "_ga"             # Google Analytics Client ID
+  - "_gac"            # Google Analytics Campaign
+  - "_gid"            # Google Analytics Session ID
+  - "_gcl_au"         # Google Analytics Auto-tagging
+  - "_gcl_aw"         # Google Ads Web
+  - "_gcl_dc"         # DoubleClick
+
+# Facebook/Meta
+facebook:
+  - "fbclid"          # Facebook Click Identifier
+  - "fbadid"          # Facebook Ad ID
+  - "fb_action_ids"   # Facebook Action IDs
+  - "fb_action_types" # Facebook Action Types
+  - "fb_source"       # Facebook Source
+  - "fb_ref"          # Facebook Referrer
+
+# Microsoft/Bing
+microsoft:
+  - "msclkid"         # Microsoft Click ID
+  - "ms_c"            # Microsoft Campaign
+  - "ms_k"            # Microsoft Keyword
+
+# Twitter/X
+twitter:
+  - "twclid"          # Twitter Click ID
+  - "tw_source"       # Twitter Source
+  - "tw_medium"       # Twitter Medium
+
+# LinkedIn
+linkedin:
+  - "li_fat_id"       # LinkedIn First-party Analytics Tag
+  - "lipi"            # LinkedIn Partner Integration
+  - "licu"            # LinkedIn Custom URL
+  - "li_mc"           # LinkedIn Marketing Campaign
+
+# Instagram
+instagram:
+  - "igshid"          # Instagram Share ID
+  - "ig_source"       # Instagram Source
+
+# YouTube
+youtube:
+  - "feature"         # YouTube Feature
+  - "si"              # YouTube Share Identifier
+  - "pp"              # YouTube Player Parameters
+
+# Email Marketing
+email_marketing:
+  - "mc_cid"          # MailChimp Campaign ID
+  - "mc_eid"          # MailChimp Email ID
+  - "utm_id"          # Universal Campaign ID
+  - "campaign_id"     # Generic Campaign ID
+  - "email_id"        # Email Identifier
+  - "newsletter_id"   # Newsletter ID
+
+# Generic/Common
+generic:
+  - "ref"             # Referrer
+  - "source"          # Generic source
+  - "medium"          # Generic medium
+  - "campaign"        # Generic campaign
+  - "referrer"        # Alternative referrer
+  - "track"           # Generic tracking
+  - "tracking"        # Generic tracking
+  - "track_id"        # Tracking ID
+  - "campaign_name"   # Campaign name
+  - "promo"           # Promotion code
+  - "promo_code"      # Promotion code
+  - "affiliate"       # Affiliate code
+  - "affiliate_id"    # Affiliate ID
+  - "partner"         # Partner identifier
+  - "channel"         # Marketing channel
+
+# Yandex
+yandex:
+  - "yclid"           # Yandex Click ID
+  - "ya_source"       # Yandex Source
+  - "_openstat"       # Yandex OpenStat
+
+# HubSpot
+hubspot:
+  - "hsCtaTracking"   # HubSpot CTA Tracking
+  - "hsLang"          # HubSpot Language
+  - "__hstc"          # HubSpot Tracking Cookie
+  - "__hssc"          # HubSpot Session Cookie
+  - "__hsfp"          # HubSpot Fingerprint
+
+# Adobe Analytics
+adobe:
+  - "s_cid"           # Adobe Campaign ID
+  - "s_kwcid"         # Adobe Keyword ID
+  - "s_kwgid"         # Adobe Keyword Group ID
+
+# Other Analytics Platforms
+other_analytics:
+  - "pk_campaign"     # Piwik/Matomo Campaign
+  - "pk_kwd"          # Piwik/Matomo Keyword
+  - "pk_source"       # Piwik/Matomo Source
+  - "pk_medium"       # Piwik/Matomo Medium
+  - "piwik_campaign"  # Piwik Campaign
+  - "mtm_campaign"    # Matomo Campaign
+  - "mtm_source"      # Matomo Source
+  - "mtm_medium"      # Matomo Medium
+  - "mtm_keyword"     # Matomo Keyword
+
+# Social Media Generic
+social_generic:
+  - "share_id"        # Generic share ID
+  - "post_id"         # Post identifier
+  - "social_source"   # Social media source
+  - "social_medium"   # Social media medium
+
+# E-commerce
+ecommerce:
+  - "coupon"          # Coupon code
+  - "discount"        # Discount code
+  - "offer"           # Offer code
+  - "deal"            # Deal identifier
+  - "promocode"       # Promo code
+  - "voucher"         # Voucher code
+
+# Website Internal
+internal:
+  - "tab"             # Tab identifier
+  - "view"            # View mode
+  - "layout"          # Layout mode
+  - "theme"           # Theme selection
+  - "lang"            # Language selection
+  - "locale"          # Locale setting
+  - "timezone"        # Timezone
+  - "currency"        # Currency
+
+# Debugging/Testing
+debug:
+  - "debug"           # Debug mode
+  - "test"            # Test parameter
+  - "preview"         # Preview mode
+  - "dev"             # Development mode
+  - "staging"         # Staging parameter
+
+# Session/Temporary
+session:
+  - "sid"             # Session ID
+  - "session_id"      # Session identifier
+  - "temp_id"         # Temporary ID
+  - "cache_buster"    # Cache busting
+  - "timestamp"       # Timestamp
+  - "rand"            # Random parameter
+  - "random"          # Random value
+  - "_"               # Common cache buster
+
+# Configuration
+config:
+  # Combinar todas as listas em uma única para uso no pipeline
+  merge_all_lists: true
+  
+  # Tratamento case-sensitive
+  case_sensitive: false
+  
+  # Prefixos a considerar (ex: utm_*, pk_*)
+  prefix_patterns:
+    - "utm_*"
+    - "pk_*"
+    - "mtm_*"
+    - "fb_*"
+    - "tw_*"
+    - "ig_*"
+    - "li_*"
+    - "ya_*"
+    - "_gc*"
+    - "__hs*"
+    - "s_*"
+    
+  # Sugestões automáticas baseadas em frequência
+  auto_suggest:
+    enabled: true
+    min_frequency: 10        # Mínimo de ocorrências para sugerir inclusão
+    min_percentage: 0.1      # Mínimo 0.1% das URLs para sugerir
+    exclude_common_words:    # Não sugerir estes mesmo que frequentes
+      - "id"
+      - "page"
+      - "url"
+      - "link"
+      - "path"
+      - "file"
+      - "name"
+      - "type"
+      - "mode"
+      - "action"

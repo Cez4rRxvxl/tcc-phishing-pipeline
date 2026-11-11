@@ -1,0 +1,31 @@
+# Dependências diretas do pipeline novo (SDD.md secao 7.1).
+# Faixas de versao, para leitura humana e para `pip install -r requirements.txt`
+# em ambientes que nao precisam do pin exato. Para reproduzir bit-a-bit o
+# ambiente validado (inclusive na maquina do Lucas), use `requirements.lock`.
+#
+# Python exigido: 3.14.x (ver requirements.lock e SDD.md secao 11).
+
+# --- Nucleo ---------------------------------------------------------------
+numpy>=2.0
+pandas>=2.2
+pyarrow>=17.0
+scikit-learn>=1.5
+scipy>=1.13
+joblib>=1.4
+tldextract>=5.1
+pyyaml>=6.0
+matplotlib>=3.9
+
+# --- Modelos (D4 — os 6 do artigo) -----------------------------------------
+# LogisticRegression, RandomForestClassifier e MLPClassifier vem do
+# scikit-learn (acima). Os 3 GBMs sao bibliotecas dedicadas:
+xgboost>=2.1
+lightgbm>=4.5
+catboost>=1.2
+
+# --- HPO (D5 — Etapa 2, apenas no Grambeddings) ----------------------------
+optuna>=4.0
+
+# --- Desenvolvimento --------------------------------------------------------
+pytest>=8.0
+ruff>=0.6

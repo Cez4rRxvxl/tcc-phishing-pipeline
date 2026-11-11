@@ -1,0 +1,1010 @@
+[
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "logistic_regression",
+  "auroc": 0.8243687907676869
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "random_forest",
+  "auroc": 0.8586999498243854
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "xgboost",
+  "auroc": 0.8970524335173106
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "lightgbm",
+  "auroc": 0.8917656798795784
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "catboost",
+  "auroc": 0.8778918715504266
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "mlp",
+  "auroc": 0.8636566733567486
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "logistic_regression",
+  "auroc": 0.9288227704386954
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "random_forest",
+  "auroc": 0.9214782103205628
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "xgboost",
+  "auroc": 0.9322366716203968
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "lightgbm",
+  "auroc": 0.9299370530169282
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "catboost",
+  "auroc": 0.9365271111988502
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "mlp",
+  "auroc": 0.9217844556135756
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "logistic_regression",
+  "auroc": 0.8836722214771676
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "random_forest",
+  "auroc": 0.9092549512457737
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "xgboost",
+  "auroc": 0.9136445212794212
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "lightgbm",
+  "auroc": 0.9114798014393676
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "catboost",
+  "auroc": 0.9104249852230836
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "mlp",
+  "auroc": 0.902030312855914
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "logistic_regression",
+  "auroc": 0.49746298562499996
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "random_forest",
+  "auroc": 0.4479367453125
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "xgboost",
+  "auroc": 0.481774642421875
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "lightgbm",
+  "auroc": 0.478970534609375
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "catboost",
+  "auroc": 0.421461985859375
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "mlp",
+  "auroc": 0.4565589109375
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "logistic_regression",
+  "auroc": 0.2311482992801125
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "random_forest",
+  "auroc": 0.4006274517790614
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "xgboost",
+  "auroc": 0.2629973351499103
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "lightgbm",
+  "auroc": 0.3707516858997947
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "catboost",
+  "auroc": 0.2585705102291485
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "mlp",
+  "auroc": 0.4631746531958705
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "logistic_regression",
+  "auroc": 0.27229201225759075
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "random_forest",
+  "auroc": 0.346176063063331
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "xgboost",
+  "auroc": 0.2950802287167993
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "lightgbm",
+  "auroc": 0.29141623559238444
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "catboost",
+  "auroc": 0.23730747414709305
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "mlp",
+  "auroc": 0.3954417309490457
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "logistic_regression",
+  "auroc": 0.7544181750781249
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "random_forest",
+  "auroc": 0.722021222421875
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "xgboost",
+  "auroc": 0.75173888609375
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "lightgbm",
+  "auroc": 0.754537875703125
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "catboost",
+  "auroc": 0.7505521471093749
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "mlp",
+  "auroc": 0.805678030546875
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "logistic_regression",
+  "auroc": 0.44916081284495735
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "random_forest",
+  "auroc": 0.3216320873055695
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "xgboost",
+  "auroc": 0.3873808329152032
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "lightgbm",
+  "auroc": 0.4823183642749624
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "catboost",
+  "auroc": 0.3698582538886101
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "mlp",
+  "auroc": 0.44070107877571496
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "logistic_regression",
+  "auroc": 0.8662800277884763
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "random_forest",
+  "auroc": 0.7763326646495317
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "xgboost",
+  "auroc": 0.8555897196171881
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "lightgbm",
+  "auroc": 0.8642561850865749
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "catboost",
+  "auroc": 0.8201571672637623
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "mlp",
+  "auroc": 0.8585677365152001
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "logistic_regression",
+  "auroc": 0.852244313203125
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "random_forest",
+  "auroc": 0.8716954928125
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "xgboost",
+  "auroc": 0.8954135346875
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "lightgbm",
+  "auroc": 0.903196946640625
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "catboost",
+  "auroc": 0.9030042375
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "mlp",
+  "auroc": 0.8968898488281251
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "logistic_regression",
+  "auroc": 0.540888359257401
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "random_forest",
+  "auroc": 0.48635423983943804
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "xgboost",
+  "auroc": 0.581801304565981
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "lightgbm",
+  "auroc": 0.5549944806823883
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "catboost",
+  "auroc": 0.6293429503261414
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "mlp",
+  "auroc": 0.661629578524837
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "logistic_regression",
+  "auroc": 0.9497124315853626
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "random_forest",
+  "auroc": 0.9518926983019476
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "xgboost",
+  "auroc": 0.9589183726103548
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "lightgbm",
+  "auroc": 0.9594021916329003
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "catboost",
+  "auroc": 0.9578757170882223
+ },
+ {
+  "regime": "etld1",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "mlp",
+  "auroc": 0.9534646468588504
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "logistic_regression",
+  "auroc": 0.778910689867145
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "random_forest",
+  "auroc": 0.8578585138813967
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "xgboost",
+  "auroc": 0.8766157744853281
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "lightgbm",
+  "auroc": 0.8753376572869492
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "catboost",
+  "auroc": 0.8604037083965828
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "iscx2016",
+  "model": "mlp",
+  "auroc": 0.8939066126381553
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "logistic_regression",
+  "auroc": 0.9026937212981624
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "random_forest",
+  "auroc": 0.8996640493821695
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "xgboost",
+  "auroc": 0.9034856476697491
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "lightgbm",
+  "auroc": 0.9044990474598165
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "catboost",
+  "auroc": 0.9132918121288124
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "kaggle03",
+  "model": "mlp",
+  "auroc": 0.8908593821532745
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "logistic_regression",
+  "auroc": 0.874029079155029
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "random_forest",
+  "auroc": 0.9115150566575334
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "xgboost",
+  "auroc": 0.918008094638361
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "lightgbm",
+  "auroc": 0.9181433668278838
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "catboost",
+  "auroc": 0.9156624565414432
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "grambeddings",
+  "test_corpus": "phishstorm",
+  "model": "mlp",
+  "auroc": 0.9076004444680899
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "logistic_regression",
+  "auroc": 0.441382365234375
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "random_forest",
+  "auroc": 0.38545929796875
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "xgboost",
+  "auroc": 0.41479794539062503
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "lightgbm",
+  "auroc": 0.44164690429687503
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "catboost",
+  "auroc": 0.35674835109374997
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "grambeddings",
+  "model": "mlp",
+  "auroc": 0.394961886640625
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "logistic_regression",
+  "auroc": 0.24147055444540927
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "random_forest",
+  "auroc": 0.43011911391878627
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "xgboost",
+  "auroc": 0.3516447409977253
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "lightgbm",
+  "auroc": 0.4502522672614055
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "catboost",
+  "auroc": 0.2991913595960633
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "kaggle03",
+  "model": "mlp",
+  "auroc": 0.45994512175387026
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "logistic_regression",
+  "auroc": 0.25941241010484284
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "random_forest",
+  "auroc": 0.33667110668356764
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "xgboost",
+  "auroc": 0.28997000887081426
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "lightgbm",
+  "auroc": 0.3108856556541557
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "catboost",
+  "auroc": 0.2510499661073829
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "iscx2016",
+  "test_corpus": "phishstorm",
+  "model": "mlp",
+  "auroc": 0.33574396368937137
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "logistic_regression",
+  "auroc": 0.7472068033593751
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "random_forest",
+  "auroc": 0.7298895584375
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "xgboost",
+  "auroc": 0.7459303559375001
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "lightgbm",
+  "auroc": 0.753553749140625
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "catboost",
+  "auroc": 0.74891206421875
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "grambeddings",
+  "model": "mlp",
+  "auroc": 0.7872105165625
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "logistic_regression",
+  "auroc": 0.3329236868186324
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "random_forest",
+  "auroc": 0.2016608749106146
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "xgboost",
+  "auroc": 0.29880819460300334
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "lightgbm",
+  "auroc": 0.3185003324509792
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "catboost",
+  "auroc": 0.3376630577962891
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "iscx2016",
+  "model": "mlp",
+  "auroc": 0.36289144534631357
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "logistic_regression",
+  "auroc": 0.8332244127281785
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "random_forest",
+  "auroc": 0.7947562896036411
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "xgboost",
+  "auroc": 0.8577421459235661
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "lightgbm",
+  "auroc": 0.8588007973699827
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "catboost",
+  "auroc": 0.8507314801753815
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "kaggle03",
+  "test_corpus": "phishstorm",
+  "model": "mlp",
+  "auroc": 0.8548102813371941
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "logistic_regression",
+  "auroc": 0.865324484765625
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "random_forest",
+  "auroc": 0.877893596953125
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "xgboost",
+  "auroc": 0.904886809296875
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "lightgbm",
+  "auroc": 0.90065884453125
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "catboost",
+  "auroc": 0.9062928267187501
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "grambeddings",
+  "model": "mlp",
+  "auroc": 0.902249218515625
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "logistic_regression",
+  "auroc": 0.6468587773331158
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "random_forest",
+  "auroc": 0.6931250392041248
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "xgboost",
+  "auroc": 0.7475113848778713
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "lightgbm",
+  "auroc": 0.7375079976414798
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "catboost",
+  "auroc": 0.7309703804995545
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "iscx2016",
+  "model": "mlp",
+  "auroc": 0.7515344180853334
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "logistic_regression",
+  "auroc": 0.9576207917154242
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "random_forest",
+  "auroc": 0.9437999433076346
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "xgboost",
+  "auroc": 0.9487513628079971
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "lightgbm",
+  "auroc": 0.9475518772596312
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "catboost",
+  "auroc": 0.9464053297866787
+ },
+ {
+  "regime": "oficial",
+  "train_corpus": "phishstorm",
+  "test_corpus": "kaggle03",
+  "model": "mlp",
+  "auroc": 0.9158252948343988
+ }
+]
