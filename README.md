@@ -1,6 +1,6 @@
 # tcc-phishing-pipeline
 
-Código e resultados do *pipeline* da monografia de TCC II "Detecção de Phishing por Características Léxicas de URL: Comparação de Modelos Tradicionais sob Avaliação Livre de Vazamento", do curso de Sistemas de Informação da Universidade Federal de Viçosa (UFV), *Campus* Rio Paranaíba. Autores: Julio Cezar Lopes Cardoso e Lucas Souza e Silva. Orientador: Pedro Henrique Aparecido Damaso de Melo.
+Código e resultados do *pipeline* da monografia de TCC II "Matriz Cruzada entre Fontes e Partição por Domínio na Avaliação de Detectores Léxicos de Phishing", do curso de Sistemas de Informação da Universidade Federal de Viçosa (UFV), *Campus* Rio Paranaíba. Autores: Julio Cezar Lopes Cardoso e Lucas Souza e Silva. Orientador: Pedro Henrique Aparecido Damaso de Melo.
 
 O *pipeline* carrega seis *datasets* de URLs, extrai 41 características léxicas, treina seis modelos tradicionais de aprendizado de máquina em dois regimes de partição (um que respeita o corte de referência de cada *dataset* e outro que agrupa as URLs por eTLD+1) e grava as métricas em `pipeline/results/`. A monografia descreve o método, o código e os resultados.
 
